@@ -1,0 +1,31 @@
+\hypertarget{serial_8c}{\section{serial.\-c \-File \-Reference}
+\label{serial_8c}\index{serial.\-c@{serial.\-c}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+{\ttfamily \#include $<$string.\-h$>$}\*
+{\ttfamily \#include $<$termios.\-h$>$}\*
+{\ttfamily \#include $<$unistd.\-h$>$}\*
+{\ttfamily \#include $<$sys/stat.\-h$>$}\*
+{\ttfamily \#include $<$sys/types.\-h$>$}\*
+{\ttfamily \#include $<$fcntl.\-h$>$}\*
+{\ttfamily \#include $<$syslog.\-h$>$}\*
+{\ttfamily \#include $<$errno.\-h$>$}\*
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group__serial_ga87abac1e2747a2dd7f82a04229885d97}{serial\-\_\-open} (char $\ast$comport, int highspeed)
+\begin{DoxyCompactList}\small\item\em serial port open \end{DoxyCompactList}\item 
+void \hyperlink{group__serial_gaf4be751a3a3e8cb62a725ec90d7d0d32}{serial\-\_\-close} (int sfd)
+\begin{DoxyCompactList}\small\item\em serial port close \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-U\-N\-I\-X \-Serial port device open/close for read()/write() to operate. \-Setup serial port to blast bytes over a \-Unix file descriptor.
+
+\begin{DoxyCopyright}{\-Copyright}
+\-Copyright (\-C) 2016 \-Real \-Flight \-Systems 
+\end{DoxyCopyright}
+\begin{DoxyAuthor}{\-Author}
+\-James \-F \-Dougherty $<$\href{mailto:jfd@realflightsystems.com}{\tt jfd@realflightsystems.\-com}$>$ 
+\end{DoxyAuthor}

@@ -1,0 +1,67 @@
+\hypertarget{group__io}{\section{io}
+\label{group__io}\index{io@{io}}
+}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group__io_ga8ea911d05f1e9020b6c03b5000d75868}{writen} (int fd, unsigned char $\ast$ptr, int nbytes)
+\begin{DoxyCompactList}\small\item\em write n bytes of data to a file descriptor \end{DoxyCompactList}\item 
+int \hyperlink{group__io_gae8208f491884afeed8cd9b7cee882472}{readn} (int fd, unsigned char $\ast$ptr, int nbytes)
+\begin{DoxyCompactList}\small\item\em read n bytes of data from a file descriptor \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{group__io_gae8208f491884afeed8cd9b7cee882472}{\index{io@{io}!readn@{readn}}
+\index{readn@{readn}!io@{io}}
+\subsubsection[{readn}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf readn} (
+\begin{DoxyParamCaption}
+\item[{int}]{fd, }
+\item[{unsigned char $\ast$}]{ptr, }
+\item[{int}]{nbytes}
+\end{DoxyParamCaption}
+)}}\label{group__io_gae8208f491884afeed8cd9b7cee882472}
+
+
+read n bytes of data from a file descriptor 
+
+\-On \-Linux, since read is not guaranteed to read all of the bytes available in one call, we continously read the specified number of bytes from the descriptor into the data buffer provided.
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in}  & {\em fd} & the file descriptor to read from \\
+\hline
+\mbox{\tt in,out}  & {\em ptr} & the address of the data buffer to read into \\
+\hline
+\mbox{\tt in}  & {\em nbytes} & the number of bytes to read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+number of bytes successfully read 
+\end{DoxyReturn}
+\hypertarget{group__io_ga8ea911d05f1e9020b6c03b5000d75868}{\index{io@{io}!writen@{writen}}
+\index{writen@{writen}!io@{io}}
+\subsubsection[{writen}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf writen} (
+\begin{DoxyParamCaption}
+\item[{int}]{fd, }
+\item[{unsigned char $\ast$}]{ptr, }
+\item[{int}]{nbytes}
+\end{DoxyParamCaption}
+)}}\label{group__io_ga8ea911d05f1e9020b6c03b5000d75868}
+
+
+write n bytes of data to a file descriptor 
+
+\-On \-Linux, since write is not guaranteed to write all of the bytes provided, we keep track of the number of bytes written and retry sending the data as needed.
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in}  & {\em fd} & the file descriptor to write to \\
+\hline
+\mbox{\tt in}  & {\em ptr} & the address of the data buffer to write \\
+\hline
+\mbox{\tt in}  & {\em nbytes} & the number of bytes to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+number of bytes successfully written 
+\end{DoxyReturn}

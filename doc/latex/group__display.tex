@@ -1,0 +1,1087 @@
+\hypertarget{group__display}{\section{display}
+\label{group__display}\index{display@{display}}
+}
+
+
+\-Display \-Driver for \-Digole \-O\-L\-E\-D \-Displays.  
+
+
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__display_ga34559df8b2eb42afb87d9b77e2be115e}{\-D\-I\-S\-P\-\_\-\-W}~(160)
+\item 
+\#define \hyperlink{group__display_ga3caed4fa6b4e84a4e630e733260300c1}{\-D\-I\-S\-P\-\_\-\-H}~(128)
+\item 
+\#define \hyperlink{group__display_gac16a222c648fdce7e5eb4f7e6cdb4d9d}{delay}~\hyperlink{group__display_gac8bd0fbcbea79baa54d11e5b5882b7cd}{ms\-\_\-delay}
+\item 
+\#define \hyperlink{group__display_gad77e166d8f5931c693952f5e89c2b732}{\-I\-N\-T\-E\-R\-N\-A\-L\-\_\-\-D\-E\-L\-A\-Y}~(800)
+\item 
+\hypertarget{group__display_ga739a5638f8592454e0c68591afc8cd86}{\#define {\bfseries \-U\-S\-E\-\_\-\-D\-I\-G\-O\-L\-E\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-P\-I}}\label{group__display_ga739a5638f8592454e0c68591afc8cd86}
+
+\item 
+\#define \hyperlink{group__display_ga0852287be3866e6ca5f85e48fca56dfe}{print}(x)~print\-\_\-com(com\-\_\-fd, (x))
+\item 
+\hypertarget{group__display_ga9a773540902f8b1ec1de5bc4d37b3827}{\#define {\bfseries preprint}()~\hyperlink{group__display_ga0852287be3866e6ca5f85e48fca56dfe}{print}(\char`\"{}\-T\-T\char`\"{})}\label{group__display_ga9a773540902f8b1ec1de5bc4d37b3827}
+
+\item 
+\#define \hyperlink{group__display_ga516fae68157b7ec6206f35d90e603413}{dd\-\_\-set\-\_\-rot90}()~\hyperlink{group__display_ga0852287be3866e6ca5f85e48fca56dfe}{print}(\char`\"{}\-S\-D1\char`\"{})
+\item 
+\#define \hyperlink{group__display_gad0d7548671b0db476d55e25d717bdd92}{dd\-\_\-set\-\_\-rot180}()~\hyperlink{group__display_ga0852287be3866e6ca5f85e48fca56dfe}{print}(\char`\"{}\-S\-D2\char`\"{})
+\item 
+\hypertarget{group__display_gae833937ec7507a662dd4d6c75d3535b1}{\#define {\bfseries dd\-\_\-set\-\_\-rot\-\_\-270}()~\hyperlink{group__display_ga0852287be3866e6ca5f85e48fca56dfe}{print}(\char`\"{}\-S\-D3\char`\"{})}\label{group__display_gae833937ec7507a662dd4d6c75d3535b1}
+
+\item 
+\#define \hyperlink{group__display_ga3fdc97a4d3168e32eb20e626a045d4fb}{dd\-\_\-undo\-\_\-rot}()~\hyperlink{group__display_ga0852287be3866e6ca5f85e48fca56dfe}{print}(\char`\"{}\-S\-D0\char`\"{})
+\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__display_ga07e69aff750648fd47a75afc4da8c0d4}{us\-\_\-delay} (unsigned int usecs)
+\begin{DoxyCompactList}\small\item\em microsecond delay \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gac8bd0fbcbea79baa54d11e5b5882b7cd}{ms\-\_\-delay} (unsigned int usecs)
+\begin{DoxyCompactList}\small\item\em millisecond delay \end{DoxyCompactList}\item 
+void \hyperlink{group__display_ga2c63ec2b4e0ad55ca0a8c6d3b59cec29}{dd\-\_\-println} (unsigned char $\ast$v)
+\begin{DoxyCompactList}\small\item\em \-Print a line of text. \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gaa7cf318c844e09b44ba46b498ee9c61b}{dd\-\_\-disable\-\_\-cursor} (void)
+\begin{DoxyCompactList}\small\item\em \-Disable cursor. \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gac87dcc801a81225439938546afc3aeca}{dd\-\_\-enable\-\_\-cursor} (void)
+\begin{DoxyCompactList}\small\item\em \-Enable cursor. \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gadc3cefb31b0c5e2048f33bf0e32af331}{dd\-\_\-draw\-\_\-str} (unsigned char x, unsigned char y, unsigned char $\ast$s)
+\begin{DoxyCompactList}\small\item\em \-Draw string. \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gad988058b08a1d4853ac978fedf6365f3}{dd\-\_\-set\-\_\-printpos} (unsigned char x, unsigned char y, unsigned char graph)
+\begin{DoxyCompactList}\small\item\em \-Setting \-Drawing \-Position. \end{DoxyCompactList}\item 
+void \hyperlink{group__display_ga2148fb37938f252395fda6f9d57eebbc}{dd\-\_\-clear\-\_\-screen} (void)
+\begin{DoxyCompactList}\small\item\em \-Clear \-Screen. \end{DoxyCompactList}\item 
+void \hyperlink{group__display_ga51372d6a4a835af59fb125047480817d}{dd\-\_\-set\-\_\-lcd\-\_\-colrow} (unsigned char col, unsigned char row)
+\begin{DoxyCompactList}\small\item\em \-Set number of columns and rows for text-\/mode. \end{DoxyCompactList}\item 
+void \hyperlink{group__display_ga0abe17f5102182bf238c73d4a50a8e8a}{dd\-\_\-display\-\_\-config} (unsigned char v)
+\begin{DoxyCompactList}\small\item\em \-Display the display configuration on boot. \end{DoxyCompactList}\item 
+void \hyperlink{group__display_ga5353e51faeecba308836d1f9f9099783}{dd\-\_\-display\-\_\-startscreen} (unsigned char m)
+\begin{DoxyCompactList}\small\item\em \-Display the start screen on power-\/up/boot. \end{DoxyCompactList}\item 
+void \hyperlink{group__display_ga76233358da6e394f00dddf557cb8d088}{dd\-\_\-set\-\_\-mode} (unsigned char m)
+\begin{DoxyCompactList}\small\item\em \-Set the \-Display \-Drawing \-Mode. \end{DoxyCompactList}\item 
+void \hyperlink{group__display_ga599a978209e3d9c4e4d1f129ad21715c}{dd\-\_\-set\-\_\-text\-\_\-pos\-\_\-back} (void)
+\begin{DoxyCompactList}\small\item\em \-Set text position back one character (\-B\-S) \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gad1a1870cebdd4e0df17d1ff9f990b40c}{dd\-\_\-set\-\_\-text\-\_\-pos\-\_\-offset} (unsigned char xoffset, unsigned char yoffset)
+\begin{DoxyCompactList}\small\item\em \-Adjust the current text position by specified offset. \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gaf3ee28b3d5bad861fd1fea1b8e1ccd46}{dd\-\_\-set\-\_\-text\-\_\-pos\-\_\-abs} (unsigned char x, unsigned char y)
+\begin{DoxyCompactList}\small\item\em \-Adjust the current text position to absolute offset. \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gaae519dd067406a1cc1eca1e1d25c1bc6}{dd\-\_\-set\-\_\-line\-\_\-pattern} (unsigned char pattern)
+\begin{DoxyCompactList}\small\item\em \-Set the line pattern for line drawing operations. \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gaf1d94e3624be89a4d250604472673fa2}{dd\-\_\-digital\-\_\-output} (unsigned char x)
+\begin{DoxyCompactList}\small\item\em digital port output \end{DoxyCompactList}\item 
+void \hyperlink{group__display_ga17ea27854f28b826df824f8fb5b76ee7}{draw\-\_\-bitmap} (unsigned char x, unsigned char y, unsigned char w, unsigned char h, unsigned char $\ast$bitmap)
+\begin{DoxyCompactList}\small\item\em \-Draw monochrome bitmap. \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gae6b8e55ba9a1e32f92d687c631d1ee6b}{dd\-\_\-set\-\_\-rot} (unsigned char d)
+\begin{DoxyCompactList}\small\item\em \-Set display rotation. \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gada2afd62a98dcc9dd5f232209a5c996f}{dd\-\_\-set\-\_\-contrast} (unsigned char c)
+\begin{DoxyCompactList}\small\item\em set the display contrast \end{DoxyCompactList}\item 
+void \hyperlink{group__display_ga65e9f64a382ffdd6724e8412ef79c05f}{dd\-\_\-draw\-\_\-box} (unsigned char x, unsigned char y, unsigned char w, unsigned char h)
+\begin{DoxyCompactList}\small\item\em draw a box \end{DoxyCompactList}\item 
+void \hyperlink{group__display_ga583b488e0a33d91c7422b17bcd3ca75d}{dd\-\_\-draw\-\_\-circle} (int8\-\_\-t x, unsigned char y, unsigned char r, unsigned char f)
+\begin{DoxyCompactList}\small\item\em draw a circle \end{DoxyCompactList}\item 
+void \hyperlink{group__display_ga62392dbfb72a9071166abdffb6835c18}{dd\-\_\-draw\-\_\-frame} (unsigned char x, unsigned char y, unsigned char w, unsigned char h)
+\begin{DoxyCompactList}\small\item\em draw a frame (rectangle) \end{DoxyCompactList}\item 
+void \hyperlink{group__display_ga30dd8928bfac3cfd234afe5983b13436}{dd\-\_\-setpixel} (unsigned char x, unsigned char y, unsigned char color)
+\begin{DoxyCompactList}\small\item\em set a pixel a specified color \end{DoxyCompactList}\item 
+void \hyperlink{group__display_ga9fe0d2c43ae2407191b9a522bb580686}{dd\-\_\-drawline} (unsigned char x, unsigned char y, unsigned char x1, unsigned char y1)
+\begin{DoxyCompactList}\small\item\em draw a line \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gae7182b6fde52b4264b22cc5c4cdbae0b}{dd\-\_\-lineto} (unsigned char x, unsigned char y)
+\begin{DoxyCompactList}\small\item\em draw a line from the current position to a new position \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gaa6fe3be96609537f1dde783a815a51f6}{dd\-\_\-hline} (unsigned char x, unsigned char y, unsigned char w)
+\begin{DoxyCompactList}\small\item\em draw a horizontal line at specified position and width \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gad27d393cb4e4339dcd0671908e22b65c}{dd\-\_\-vline} (unsigned char x, unsigned char y, unsigned char h)
+\begin{DoxyCompactList}\small\item\em draw a vertical line at specified position and height \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gaef33ebb295da7922b27439cd181b3598}{dd\-\_\-next\-\_\-text\-\_\-line} (void)
+\begin{DoxyCompactList}\small\item\em move text cursor to new line \end{DoxyCompactList}\item 
+void \hyperlink{group__display_ga61bdf8470f0d64b1aee8700e74e24264}{dd\-\_\-setfont} (unsigned char font)
+\begin{DoxyCompactList}\small\item\em set the font to be used from preloaded flash locations \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gad4f4f9bfc3b024f4d561de88337e9e6f}{dd\-\_\-setcolor} (unsigned char color)
+\begin{DoxyCompactList}\small\item\em set the drawing color \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gad3a46b68468118bec6bac8e085614e43}{dd\-\_\-setbgcolor} (unsigned char color)
+\begin{DoxyCompactList}\small\item\em set the current color as the background color \end{DoxyCompactList}\item 
+\hypertarget{group__display_ga67f32f8cba110a28ce464d71acc53399}{void \hyperlink{group__display_ga67f32f8cba110a28ce464d71acc53399}{dd\-\_\-backlight\-\_\-on} (void)}\label{group__display_ga67f32f8cba110a28ce464d71acc53399}
+
+\begin{DoxyCompactList}\small\item\em turn on backlight \end{DoxyCompactList}\item 
+\hypertarget{group__display_ga7e782e79678f36dabaaf509071c05874}{void \hyperlink{group__display_ga7e782e79678f36dabaaf509071c05874}{dd\-\_\-backlight\-\_\-off} (void)}\label{group__display_ga7e782e79678f36dabaaf509071c05874}
+
+\begin{DoxyCompactList}\small\item\em turn off backlight \end{DoxyCompactList}\item 
+\hypertarget{group__display_ga7ee3fe530efeed2df71f53c0ed6c8b0b}{void \hyperlink{group__display_ga7ee3fe530efeed2df71f53c0ed6c8b0b}{dd\-\_\-set\-\_\-screen\-\_\-on} (void)}\label{group__display_ga7ee3fe530efeed2df71f53c0ed6c8b0b}
+
+\begin{DoxyCompactList}\small\item\em turn on screen \end{DoxyCompactList}\item 
+\hypertarget{group__display_gab7c7001528cccf3610b9651364842d91}{void \hyperlink{group__display_gab7c7001528cccf3610b9651364842d91}{dd\-\_\-set\-\_\-screen\-\_\-off} (void)}\label{group__display_gab7c7001528cccf3610b9651364842d91}
+
+\begin{DoxyCompactList}\small\item\em turn off screen \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gad27debe11f640b4939c4b6f88d534080}{dd\-\_\-direct\-\_\-command} (unsigned char d)
+\begin{DoxyCompactList}\small\item\em send direct command to display \end{DoxyCompactList}\item 
+void \hyperlink{group__display_ga5b9f3252e68b2a5b20242f7c0e2f8c77}{dd\-\_\-direct\-\_\-data} (unsigned char d)
+\begin{DoxyCompactList}\small\item\em send direct data to display \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gae0257daad0038af711eae17127882d94}{dd\-\_\-move\-\_\-area} (unsigned char x0, unsigned char y0, unsigned char w, unsigned char h, unsigned char xoffset, unsigned char yoffset)
+\begin{DoxyCompactList}\small\item\em move screen memory area from one location to another \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gaa01941111f8ffdbc902e88f198b1a383}{dd\-\_\-upload\-\_\-start\-\_\-screen} (int lon, unsigned char $\ast$data)
+\begin{DoxyCompactList}\small\item\em download startup screen data to display controller \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gaa6ec3ad2a963ba90eaafd805dbace08b}{dd\-\_\-upload\-\_\-user\-\_\-font} (int lon, unsigned char $\ast$data, unsigned char sect)
+\begin{DoxyCompactList}\small\item\em upload font data \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gae40465af03e74db8719be97f188e50ec}{dd\-\_\-draw\-\_\-bitmap256} (unsigned char x, unsigned char y, unsigned char w, unsigned char h, unsigned char $\ast$bitmap)
+\begin{DoxyCompactList}\small\item\em draw a 256-\/color bitmap \end{DoxyCompactList}\item 
+void \hyperlink{group__display_ga0d9fff0e64c704ca0698a3ed4ad9a324}{dd\-\_\-draw\-\_\-bitmap262\-K} (unsigned char x, unsigned char y, unsigned char w, unsigned char h, unsigned char $\ast$bitmap)
+\begin{DoxyCompactList}\small\item\em draw a 262\-K-\/color bitmap \end{DoxyCompactList}\item 
+void \hyperlink{group__display_ga36c5c8c7450675727113efde002c7310}{dd\-\_\-set\-\_\-truecolor} (unsigned char r, unsigned char g, unsigned char b)
+\begin{DoxyCompactList}\small\item\em set the drawing color in 24-\/bit mode \end{DoxyCompactList}\item 
+void \hyperlink{group__display_ga29851960a87e3aa2636a801d1e708460}{dd\-\_\-reset\-\_\-draw\-\_\-win} (void)
+\begin{DoxyCompactList}\small\item\em reset the drawing window to full screen \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gab8af836c33fea603bb9cf83e45e5c872}{dd\-\_\-clean\-\_\-win} (void)
+\begin{DoxyCompactList}\small\item\em clear drawing window \end{DoxyCompactList}\item 
+void \hyperlink{group__display_ga0cc1e04b79d1fa95b3b3028ca31420f0}{dd\-\_\-define\-\_\-win} (unsigned char x, unsigned char y, unsigned char h, unsigned char w)
+\begin{DoxyCompactList}\small\item\em define drawing window \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Display \-Driver for \-Digole \-O\-L\-E\-D \-Displays. \-This module implements \-Text and \-Graphics functionality for the \-Digole \-Serial \-O\-L\-E\-D \-Display modules made by \href{http://www.digole.com/}{\tt \-Digole }. \-Tested and verified with \-Digole 1.\-8" \-Serial\-: \-U\-A\-R\-T/\-I2\-C/\-S\-P\-I \-True \-Color \-O\-L\-E\-D160x128 \-O\-L\-E\-D \-Module \-D\-S160128\-C\-O\-L\-E\-D-\/46\hypertarget{index_ref}{}\subsection{\-Reference}\label{index_ref}
+\-See also\-: \href{http://www.digole.com/index.php?productID=859}{\tt http\-://www.\-digole.\-com/index.\-php?product\-I\-D=859} 
+
+\-See also\-: \href{http://www.digole.com//images/file/Tech_Data/Digole_Serial_Display_Adapter-Manual.pdf}{\tt http\-://www.\-digole.\-com//images/file/\-Tech\-\_\-\-Data/\-Digole\-\_\-\-Serial\-\_\-\-Display\-\_\-\-Adapter-\/\-Manual.\-pdf}
+
+\begin{DoxyCopyright}{\-Copyright}
+\-Copyright (\-C) 2016 \-Real \-Flight \-Systems 
+\end{DoxyCopyright}
+\begin{DoxyAuthor}{\-Author}
+\-James \-F \-Dougherty $<$\href{mailto:jfd@realflightsystems.com}{\tt jfd@realflightsystems.\-com}$>$ 
+\end{DoxyAuthor}
+
+
+\subsection{\-Define \-Documentation}
+\hypertarget{group__display_gad0d7548671b0db476d55e25d717bdd92}{\index{display@{display}!dd\-\_\-set\-\_\-rot180@{dd\-\_\-set\-\_\-rot180}}
+\index{dd\-\_\-set\-\_\-rot180@{dd\-\_\-set\-\_\-rot180}!display@{display}}
+\subsubsection[{dd\-\_\-set\-\_\-rot180}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf dd\-\_\-set\-\_\-rot180}(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~{\bf print}(\char`\"{}\-S\-D2\char`\"{})}}\label{group__display_gad0d7548671b0db476d55e25d717bdd92}
+\-Rotate orientation of display 180 degrees \hypertarget{group__display_ga516fae68157b7ec6206f35d90e603413}{\index{display@{display}!dd\-\_\-set\-\_\-rot90@{dd\-\_\-set\-\_\-rot90}}
+\index{dd\-\_\-set\-\_\-rot90@{dd\-\_\-set\-\_\-rot90}!display@{display}}
+\subsubsection[{dd\-\_\-set\-\_\-rot90}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf dd\-\_\-set\-\_\-rot90}(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~{\bf print}(\char`\"{}\-S\-D1\char`\"{})}}\label{group__display_ga516fae68157b7ec6206f35d90e603413}
+\-Rotate orientation of display 90 degrees \hypertarget{group__display_ga3fdc97a4d3168e32eb20e626a045d4fb}{\index{display@{display}!dd\-\_\-undo\-\_\-rot@{dd\-\_\-undo\-\_\-rot}}
+\index{dd\-\_\-undo\-\_\-rot@{dd\-\_\-undo\-\_\-rot}!display@{display}}
+\subsubsection[{dd\-\_\-undo\-\_\-rot}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf dd\-\_\-undo\-\_\-rot}(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~{\bf print}(\char`\"{}\-S\-D0\char`\"{})}}\label{group__display_ga3fdc97a4d3168e32eb20e626a045d4fb}
+\-Restore orientation of display rotation to normal defaults \hypertarget{group__display_gac16a222c648fdce7e5eb4f7e6cdb4d9d}{\index{display@{display}!delay@{delay}}
+\index{delay@{delay}!display@{display}}
+\subsubsection[{delay}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf delay}~{\bf ms\-\_\-delay}}}\label{group__display_gac16a222c648fdce7e5eb4f7e6cdb4d9d}
+delays for {\itshape x\/} milliseconds
+
+\-This is the delay value needed for loading 262\-K color bmp \hypertarget{group__display_ga3caed4fa6b4e84a4e630e733260300c1}{\index{display@{display}!\-D\-I\-S\-P\-\_\-\-H@{\-D\-I\-S\-P\-\_\-\-H}}
+\index{\-D\-I\-S\-P\-\_\-\-H@{\-D\-I\-S\-P\-\_\-\-H}!display@{display}}
+\subsubsection[{\-D\-I\-S\-P\-\_\-\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-D\-I\-S\-P\-\_\-\-H}~(128)}}\label{group__display_ga3caed4fa6b4e84a4e630e733260300c1}
+screen {\itshape height\/} in pixels \hypertarget{group__display_ga34559df8b2eb42afb87d9b77e2be115e}{\index{display@{display}!\-D\-I\-S\-P\-\_\-\-W@{\-D\-I\-S\-P\-\_\-\-W}}
+\index{\-D\-I\-S\-P\-\_\-\-W@{\-D\-I\-S\-P\-\_\-\-W}!display@{display}}
+\subsubsection[{\-D\-I\-S\-P\-\_\-\-W}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-D\-I\-S\-P\-\_\-\-W}~(160)}}\label{group__display_ga34559df8b2eb42afb87d9b77e2be115e}
+screen {\itshape width\/} in pixels \hypertarget{group__display_gad77e166d8f5931c693952f5e89c2b732}{\index{display@{display}!\-I\-N\-T\-E\-R\-N\-A\-L\-\_\-\-D\-E\-L\-A\-Y@{\-I\-N\-T\-E\-R\-N\-A\-L\-\_\-\-D\-E\-L\-A\-Y}}
+\index{\-I\-N\-T\-E\-R\-N\-A\-L\-\_\-\-D\-E\-L\-A\-Y@{\-I\-N\-T\-E\-R\-N\-A\-L\-\_\-\-D\-E\-L\-A\-Y}!display@{display}}
+\subsubsection[{\-I\-N\-T\-E\-R\-N\-A\-L\-\_\-\-D\-E\-L\-A\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-I\-N\-T\-E\-R\-N\-A\-L\-\_\-\-D\-E\-L\-A\-Y}~(800)}}\label{group__display_gad77e166d8f5931c693952f5e89c2b732}
+\-Defined when using \-Serial or \-S\-P\-I communication interface on module \hypertarget{group__display_ga0852287be3866e6ca5f85e48fca56dfe}{\index{display@{display}!print@{print}}
+\index{print@{print}!display@{display}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf print}(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~print\-\_\-com(com\-\_\-fd, (x))}}\label{group__display_ga0852287be3866e6ca5f85e48fca56dfe}
+output string data {\itshape x\/} to display 
+
+\subsection{\-Function \-Documentation}
+\hypertarget{group__display_gab8af836c33fea603bb9cf83e45e5c872}{\index{display@{display}!dd\-\_\-clean\-\_\-win@{dd\-\_\-clean\-\_\-win}}
+\index{dd\-\_\-clean\-\_\-win@{dd\-\_\-clean\-\_\-win}!display@{display}}
+\subsubsection[{dd\-\_\-clean\-\_\-win}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-clean\-\_\-win} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__display_gab8af836c33fea603bb9cf83e45e5c872}
+
+
+clear drawing window 
+
+\-This routine will clear the defined drawing window. \hypertarget{group__display_ga2148fb37938f252395fda6f9d57eebbc}{\index{display@{display}!dd\-\_\-clear\-\_\-screen@{dd\-\_\-clear\-\_\-screen}}
+\index{dd\-\_\-clear\-\_\-screen@{dd\-\_\-clear\-\_\-screen}!display@{display}}
+\subsubsection[{dd\-\_\-clear\-\_\-screen}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-clear\-\_\-screen} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__display_ga2148fb37938f252395fda6f9d57eebbc}
+
+
+\-Clear \-Screen. 
+
+\-Clear display and present empty framebuffer \hypertarget{group__display_ga0cc1e04b79d1fa95b3b3028ca31420f0}{\index{display@{display}!dd\-\_\-define\-\_\-win@{dd\-\_\-define\-\_\-win}}
+\index{dd\-\_\-define\-\_\-win@{dd\-\_\-define\-\_\-win}!display@{display}}
+\subsubsection[{dd\-\_\-define\-\_\-win}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-define\-\_\-win} (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{x, }
+\item[{unsigned char}]{y, }
+\item[{unsigned char}]{h, }
+\item[{unsigned char}]{w}
+\end{DoxyParamCaption}
+)}}\label{group__display_ga0cc1e04b79d1fa95b3b3028ca31420f0}
+
+
+define drawing window 
+
+\-To facilitate drawing to separate regions of the display, this routine lets you define the active drawing window of the display. \-All coordinate accesses are bound to this region once it is defined.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em x} & the x position of the upper left hand corner \\
+\hline
+{\em y} & the yposition of the upper left hand corner \\
+\hline
+{\em w} & the width of the window \\
+\hline
+{\em h} & the height of the window \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__display_gaf1d94e3624be89a4d250604472673fa2}{\index{display@{display}!dd\-\_\-digital\-\_\-output@{dd\-\_\-digital\-\_\-output}}
+\index{dd\-\_\-digital\-\_\-output@{dd\-\_\-digital\-\_\-output}!display@{display}}
+\subsubsection[{dd\-\_\-digital\-\_\-output}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-digital\-\_\-output} (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{x}
+\end{DoxyParamCaption}
+)}}\label{group__display_gaf1d94e3624be89a4d250604472673fa2}
+
+
+digital port output 
+
+\-This command sends a byte out of the digital port. \-It is largely undocumented, the reference only says "\-Send a \-Byte to output head on board, the current driving ability for each pin is\-: 25m\-A (\-Sink/\-Source)" \hypertarget{group__display_gad27debe11f640b4939c4b6f88d534080}{\index{display@{display}!dd\-\_\-direct\-\_\-command@{dd\-\_\-direct\-\_\-command}}
+\index{dd\-\_\-direct\-\_\-command@{dd\-\_\-direct\-\_\-command}!display@{display}}
+\subsubsection[{dd\-\_\-direct\-\_\-command}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-direct\-\_\-command} (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{d}
+\end{DoxyParamCaption}
+)}}\label{group__display_gad27debe11f640b4939c4b6f88d534080}
+
+
+send direct command to display 
+
+\-Send a direct command to the display and bypass the display controller. 
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in}  & {\em d} & data command byte to transmit \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__display_ga5b9f3252e68b2a5b20242f7c0e2f8c77}{\index{display@{display}!dd\-\_\-direct\-\_\-data@{dd\-\_\-direct\-\_\-data}}
+\index{dd\-\_\-direct\-\_\-data@{dd\-\_\-direct\-\_\-data}!display@{display}}
+\subsubsection[{dd\-\_\-direct\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-direct\-\_\-data} (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{d}
+\end{DoxyParamCaption}
+)}}\label{group__display_ga5b9f3252e68b2a5b20242f7c0e2f8c77}
+
+
+send direct data to display 
+
+\-Send direct data to the display and bypass the display controller. 
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in}  & {\em d} & data byte to transmit \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__display_gaa7cf318c844e09b44ba46b498ee9c61b}{\index{display@{display}!dd\-\_\-disable\-\_\-cursor@{dd\-\_\-disable\-\_\-cursor}}
+\index{dd\-\_\-disable\-\_\-cursor@{dd\-\_\-disable\-\_\-cursor}!display@{display}}
+\subsubsection[{dd\-\_\-disable\-\_\-cursor}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-disable\-\_\-cursor} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__display_gaa7cf318c844e09b44ba46b498ee9c61b}
+
+
+\-Disable cursor. 
+
+\-Disable the \-H\-W cursor \hypertarget{group__display_ga0abe17f5102182bf238c73d4a50a8e8a}{\index{display@{display}!dd\-\_\-display\-\_\-config@{dd\-\_\-display\-\_\-config}}
+\index{dd\-\_\-display\-\_\-config@{dd\-\_\-display\-\_\-config}!display@{display}}
+\subsubsection[{dd\-\_\-display\-\_\-config}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-display\-\_\-config} (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{v}
+\end{DoxyParamCaption}
+)}}\label{group__display_ga0abe17f5102182bf238c73d4a50a8e8a}
+
+
+\-Display the display configuration on boot. 
+
+\-This is an enable/disable to show the \-O\-L\-E\-D display configuration at power-\/up/boot.
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in}  & {\em v} & when non-\/zero, will program the controller to show display configuration on power-\/up/boot \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__display_ga5353e51faeecba308836d1f9f9099783}{\index{display@{display}!dd\-\_\-display\-\_\-startscreen@{dd\-\_\-display\-\_\-startscreen}}
+\index{dd\-\_\-display\-\_\-startscreen@{dd\-\_\-display\-\_\-startscreen}!display@{display}}
+\subsubsection[{dd\-\_\-display\-\_\-startscreen}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-display\-\_\-startscreen} (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{m}
+\end{DoxyParamCaption}
+)}}\label{group__display_ga5353e51faeecba308836d1f9f9099783}
+
+
+\-Display the start screen on power-\/up/boot. 
+
+\-This is an enable/disable to show the start-\/up screen on boot. \-The start-\/up screen can be programmed to the display memory.
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in}  & {\em m} & when non-\/zero, will program the controller to show startup screen on power-\/up/boot. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__display_gae40465af03e74db8719be97f188e50ec}{\index{display@{display}!dd\-\_\-draw\-\_\-bitmap256@{dd\-\_\-draw\-\_\-bitmap256}}
+\index{dd\-\_\-draw\-\_\-bitmap256@{dd\-\_\-draw\-\_\-bitmap256}!display@{display}}
+\subsubsection[{dd\-\_\-draw\-\_\-bitmap256}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-draw\-\_\-bitmap256} (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{x, }
+\item[{unsigned char}]{y, }
+\item[{unsigned char}]{w, }
+\item[{unsigned char}]{h, }
+\item[{unsigned char $\ast$}]{bitmap}
+\end{DoxyParamCaption}
+)}}\label{group__display_gae40465af03e74db8719be97f188e50ec}
+
+
+draw a 256-\/color bitmap 
+
+\-This routine will render a 256-\/color bitmap of the specified width and height to the specified location
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em x} & the x position of the upper left hand corner of the image \\
+\hline
+{\em y} & the y position of the upper left hand corner of the image \\
+\hline
+{\em w} & the width of the image \\
+\hline
+{\em h} & the height of the image \\
+\hline
+{\em bitmap} & the address of the bitmap data in memory, each byte is a pixel\\
+\hline
+\end{DoxyParams}
+\-This routine handles 1-\/byte per pixel (256 color indexed palette) format bitmaps. 
+
+\-There are online conversion utilities available \href{http://www.digole.com/tools/PicturetoC_Hex_converter.php}{\tt here to convert the data}. \hypertarget{group__display_ga0d9fff0e64c704ca0698a3ed4ad9a324}{\index{display@{display}!dd\-\_\-draw\-\_\-bitmap262\-K@{dd\-\_\-draw\-\_\-bitmap262\-K}}
+\index{dd\-\_\-draw\-\_\-bitmap262\-K@{dd\-\_\-draw\-\_\-bitmap262\-K}!display@{display}}
+\subsubsection[{dd\-\_\-draw\-\_\-bitmap262\-K}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-draw\-\_\-bitmap262\-K} (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{x, }
+\item[{unsigned char}]{y, }
+\item[{unsigned char}]{w, }
+\item[{unsigned char}]{h, }
+\item[{unsigned char $\ast$}]{bitmap}
+\end{DoxyParamCaption}
+)}}\label{group__display_ga0d9fff0e64c704ca0698a3ed4ad9a324}
+
+
+draw a 262\-K-\/color bitmap 
+
+\-This routine will render a 262\-K-\/color bitmap of the specified width and height to the specified location
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em x} & the x position of the upper left hand corner of the image \\
+\hline
+{\em y} & the y position of the upper left hand corner of the image \\
+\hline
+{\em w} & the width of the image \\
+\hline
+{\em h} & the height of the image \\
+\hline
+{\em bitmap} & the address of the bitmap data in memory, every 3 bytes represents on pixel value\\
+\hline
+\end{DoxyParams}
+\-This routine handles 3-\/byte per pixel format bitmaps. 
+
+\-There are online conversion utilities available \href{http://www.digole.com/tools/PicturetoC_Hex_converter.php}{\tt here to convert the data}. \hypertarget{group__display_ga65e9f64a382ffdd6724e8412ef79c05f}{\index{display@{display}!dd\-\_\-draw\-\_\-box@{dd\-\_\-draw\-\_\-box}}
+\index{dd\-\_\-draw\-\_\-box@{dd\-\_\-draw\-\_\-box}!display@{display}}
+\subsubsection[{dd\-\_\-draw\-\_\-box}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-draw\-\_\-box} (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{x, }
+\item[{unsigned char}]{y, }
+\item[{unsigned char}]{w, }
+\item[{unsigned char}]{h}
+\end{DoxyParamCaption}
+)}}\label{group__display_ga65e9f64a382ffdd6724e8412ef79c05f}
+
+
+draw a box 
+
+\-This command draws a filled rectangle at the specified x,y coordinate with the specified width and height. \-The current drawing color is used to draw the box.
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in}  & {\em x} & the x position \\
+\hline
+\mbox{\tt in}  & {\em y} & the y position \\
+\hline
+\mbox{\tt in}  & {\em w} & the width of the box \\
+\hline
+\mbox{\tt in}  & {\em h} & the height of the box \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__display_ga583b488e0a33d91c7422b17bcd3ca75d}{\index{display@{display}!dd\-\_\-draw\-\_\-circle@{dd\-\_\-draw\-\_\-circle}}
+\index{dd\-\_\-draw\-\_\-circle@{dd\-\_\-draw\-\_\-circle}!display@{display}}
+\subsubsection[{dd\-\_\-draw\-\_\-circle}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-draw\-\_\-circle} (
+\begin{DoxyParamCaption}
+\item[{int8\-\_\-t}]{x, }
+\item[{unsigned char}]{y, }
+\item[{unsigned char}]{r, }
+\item[{unsigned char}]{f}
+\end{DoxyParamCaption}
+)}}\label{group__display_ga583b488e0a33d91c7422b17bcd3ca75d}
+
+
+draw a circle 
+
+\-Draws a circle (optionally) filled at specified x,y coordinate with specified radius.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em x} & the x coordinate \\
+\hline
+{\em y} & the y coordinate \\
+\hline
+{\em r} & the radius (in pixels) \\
+\hline
+{\em f} & whether to fill with foreground (current drawing) color \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__display_ga62392dbfb72a9071166abdffb6835c18}{\index{display@{display}!dd\-\_\-draw\-\_\-frame@{dd\-\_\-draw\-\_\-frame}}
+\index{dd\-\_\-draw\-\_\-frame@{dd\-\_\-draw\-\_\-frame}!display@{display}}
+\subsubsection[{dd\-\_\-draw\-\_\-frame}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-draw\-\_\-frame} (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{x, }
+\item[{unsigned char}]{y, }
+\item[{unsigned char}]{w, }
+\item[{unsigned char}]{h}
+\end{DoxyParamCaption}
+)}}\label{group__display_ga62392dbfb72a9071166abdffb6835c18}
+
+
+draw a frame (rectangle) 
+
+\-This routine will draw a rectangle at the specified x,y coordinate with the specified width and height.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em x} & the x coordinate \\
+\hline
+{\em y} & the y coordinate \\
+\hline
+{\em w} & the width of the rectangle \\
+\hline
+{\em h} & the height of the rectangle \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__display_gadc3cefb31b0c5e2048f33bf0e32af331}{\index{display@{display}!dd\-\_\-draw\-\_\-str@{dd\-\_\-draw\-\_\-str}}
+\index{dd\-\_\-draw\-\_\-str@{dd\-\_\-draw\-\_\-str}!display@{display}}
+\subsubsection[{dd\-\_\-draw\-\_\-str}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-draw\-\_\-str} (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{x, }
+\item[{unsigned char}]{y, }
+\item[{unsigned char $\ast$}]{s}
+\end{DoxyParamCaption}
+)}}\label{group__display_gadc3cefb31b0c5e2048f33bf0e32af331}
+
+
+\-Draw string. 
+
+\-Draws a string at specified x/y location where (0,0) is the origin and the display framebuffer extends to (\-D\-I\-S\-P\-\_\-\-W,\-D\-I\-S\-P\-\_\-\-H). \-Note that the display will require different values for x/y to offset depending on which font is loaded.
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in}  & {\em x} & the x position \\
+\hline
+\mbox{\tt in}  & {\em y} & the y position \\
+\hline
+\mbox{\tt in}  & {\em s} & the string to display \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__display_ga9fe0d2c43ae2407191b9a522bb580686}{\index{display@{display}!dd\-\_\-drawline@{dd\-\_\-drawline}}
+\index{dd\-\_\-drawline@{dd\-\_\-drawline}!display@{display}}
+\subsubsection[{dd\-\_\-drawline}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-drawline} (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{x, }
+\item[{unsigned char}]{y, }
+\item[{unsigned char}]{x1, }
+\item[{unsigned char}]{y1}
+\end{DoxyParamCaption}
+)}}\label{group__display_ga9fe0d2c43ae2407191b9a522bb580686}
+
+
+draw a line 
+
+\-This routine will draw a line from x,y to x1,y1 using the currently specified color and graphics position. \-When the line is done drawing the current graphics position is updated to x1,y1.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em x} & the starting x coordinate \\
+\hline
+{\em y} & the starting y coordinate \\
+\hline
+{\em x1} & the ending x coordinate \\
+\hline
+{\em y1} & the ending y coordinate \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__display_gac87dcc801a81225439938546afc3aeca}{\index{display@{display}!dd\-\_\-enable\-\_\-cursor@{dd\-\_\-enable\-\_\-cursor}}
+\index{dd\-\_\-enable\-\_\-cursor@{dd\-\_\-enable\-\_\-cursor}!display@{display}}
+\subsubsection[{dd\-\_\-enable\-\_\-cursor}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-enable\-\_\-cursor} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__display_gac87dcc801a81225439938546afc3aeca}
+
+
+\-Enable cursor. 
+
+\-Enable the \-H\-W cursor \hypertarget{group__display_gaa6fe3be96609537f1dde783a815a51f6}{\index{display@{display}!dd\-\_\-hline@{dd\-\_\-hline}}
+\index{dd\-\_\-hline@{dd\-\_\-hline}!display@{display}}
+\subsubsection[{dd\-\_\-hline}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-hline} (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{x, }
+\item[{unsigned char}]{y, }
+\item[{unsigned char}]{w}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{group__display_gaa6fe3be96609537f1dde783a815a51f6}
+
+
+draw a horizontal line at specified position and width 
+
+\-This routine will draw a horizontal line from the specified position using the specified width. \-When the line is done drawing the current graphics position is updated to x+w,y.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em x} & the x coordinate \\
+\hline
+{\em y} & the y coordinate \\
+\hline
+{\em w} & the width of the line \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__display_gae7182b6fde52b4264b22cc5c4cdbae0b}{\index{display@{display}!dd\-\_\-lineto@{dd\-\_\-lineto}}
+\index{dd\-\_\-lineto@{dd\-\_\-lineto}!display@{display}}
+\subsubsection[{dd\-\_\-lineto}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-lineto} (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{x, }
+\item[{unsigned char}]{y}
+\end{DoxyParamCaption}
+)}}\label{group__display_gae7182b6fde52b4264b22cc5c4cdbae0b}
+
+
+draw a line from the current position to a new position 
+
+\-This routine will draw a line from the current position (last graphics position x,y) to a new position using the currently specified color. \-When the line is done drawing the current graphics position is updated to x1,y1.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em x} & the ending x coordinate \\
+\hline
+{\em y} & the ending y coordinate \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__display_gae0257daad0038af711eae17127882d94}{\index{display@{display}!dd\-\_\-move\-\_\-area@{dd\-\_\-move\-\_\-area}}
+\index{dd\-\_\-move\-\_\-area@{dd\-\_\-move\-\_\-area}!display@{display}}
+\subsubsection[{dd\-\_\-move\-\_\-area}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-move\-\_\-area} (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{x0, }
+\item[{unsigned char}]{y0, }
+\item[{unsigned char}]{w, }
+\item[{unsigned char}]{h, }
+\item[{unsigned char}]{xoffset, }
+\item[{unsigned char}]{yoffset}
+\end{DoxyParamCaption}
+)}}\label{group__display_gae0257daad0038af711eae17127882d94}
+
+
+move screen memory area from one location to another 
+
+\-This command emulates a bit block transfer function to move display pixels from one area of the display memory to another.
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in}  & {\em x0} & upper left hand x coordinate or region \\
+\hline
+\mbox{\tt in}  & {\em y0} & upper left hand y coordinate or region \\
+\hline
+\mbox{\tt in}  & {\em w} & width of region \\
+\hline
+\mbox{\tt in}  & {\em h} & height of region \\
+\hline
+\mbox{\tt in}  & {\em xoffset} & x displacement to move image \\
+\hline
+\mbox{\tt in}  & {\em yoffset} & y displacement to move image \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__display_gaef33ebb295da7922b27439cd181b3598}{\index{display@{display}!dd\-\_\-next\-\_\-text\-\_\-line@{dd\-\_\-next\-\_\-text\-\_\-line}}
+\index{dd\-\_\-next\-\_\-text\-\_\-line@{dd\-\_\-next\-\_\-text\-\_\-line}!display@{display}}
+\subsubsection[{dd\-\_\-next\-\_\-text\-\_\-line}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-next\-\_\-text\-\_\-line} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__display_gaef33ebb295da7922b27439cd181b3598}
+
+
+move text cursor to new line 
+
+\-This routine moves the text cursor to the next printable line \hypertarget{group__display_ga2c63ec2b4e0ad55ca0a8c6d3b59cec29}{\index{display@{display}!dd\-\_\-println@{dd\-\_\-println}}
+\index{dd\-\_\-println@{dd\-\_\-println}!display@{display}}
+\subsubsection[{dd\-\_\-println}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-println} (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{v}
+\end{DoxyParamCaption}
+)}}\label{group__display_ga2c63ec2b4e0ad55ca0a8c6d3b59cec29}
+
+
+\-Print a line of text. 
+
+\-Print one line of null-\/terminated text. \-The current cursor position is automatically advanced to the next location.
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in}  & {\em v} & the string to output \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__display_ga29851960a87e3aa2636a801d1e708460}{\index{display@{display}!dd\-\_\-reset\-\_\-draw\-\_\-win@{dd\-\_\-reset\-\_\-draw\-\_\-win}}
+\index{dd\-\_\-reset\-\_\-draw\-\_\-win@{dd\-\_\-reset\-\_\-draw\-\_\-win}!display@{display}}
+\subsubsection[{dd\-\_\-reset\-\_\-draw\-\_\-win}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-reset\-\_\-draw\-\_\-win} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__display_ga29851960a87e3aa2636a801d1e708460}
+
+
+reset the drawing window to full screen 
+
+\-This routine will reset the drawing window to full screen mode. \hypertarget{group__display_gada2afd62a98dcc9dd5f232209a5c996f}{\index{display@{display}!dd\-\_\-set\-\_\-contrast@{dd\-\_\-set\-\_\-contrast}}
+\index{dd\-\_\-set\-\_\-contrast@{dd\-\_\-set\-\_\-contrast}!display@{display}}
+\subsubsection[{dd\-\_\-set\-\_\-contrast}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-set\-\_\-contrast} (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{c}
+\end{DoxyParamCaption}
+)}}\label{group__display_gada2afd62a98dcc9dd5f232209a5c996f}
+
+
+set the display contrast 
+
+\-This command sets the display contrast but is only supported on displays which have the \-S\-T7565 \-L\-C\-D \-Controller
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in}  & {\em c} & the contrast value (0-\/255) \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__display_ga51372d6a4a835af59fb125047480817d}{\index{display@{display}!dd\-\_\-set\-\_\-lcd\-\_\-colrow@{dd\-\_\-set\-\_\-lcd\-\_\-colrow}}
+\index{dd\-\_\-set\-\_\-lcd\-\_\-colrow@{dd\-\_\-set\-\_\-lcd\-\_\-colrow}!display@{display}}
+\subsubsection[{dd\-\_\-set\-\_\-lcd\-\_\-colrow}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-set\-\_\-lcd\-\_\-colrow} (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{col, }
+\item[{unsigned char}]{row}
+\end{DoxyParamCaption}
+)}}\label{group__display_ga51372d6a4a835af59fb125047480817d}
+
+
+\-Set number of columns and rows for text-\/mode. 
+
+\-This routine will configure the universal character \-L\-C\-D adapter with the \-S\-T\-C\-R command. \-Note that this routine is not needed for normal operational mode. 
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in}  & {\em col} & the number of columns \\
+\hline
+\mbox{\tt in}  & {\em rows} & the number of rows \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__display_gaae519dd067406a1cc1eca1e1d25c1bc6}{\index{display@{display}!dd\-\_\-set\-\_\-line\-\_\-pattern@{dd\-\_\-set\-\_\-line\-\_\-pattern}}
+\index{dd\-\_\-set\-\_\-line\-\_\-pattern@{dd\-\_\-set\-\_\-line\-\_\-pattern}!display@{display}}
+\subsubsection[{dd\-\_\-set\-\_\-line\-\_\-pattern}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-set\-\_\-line\-\_\-pattern} (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{pattern}
+\end{DoxyParamCaption}
+)}}\label{group__display_gaae519dd067406a1cc1eca1e1d25c1bc6}
+
+
+\-Set the line pattern for line drawing operations. 
+
+\-This command allows you to specify a byte which represents a bitmask for drawing operations to affect the line drawing style. \-When line-\/drawing operations are performed, the display controller will repeat every 8 bits represented in the line pattern to allow programming a configurable dotted or dashed line style (the internal operation is an \-A\-N\-D function as bits which are zero will not be displayed).
+
+
+\begin{DoxyItemize}
+\item 0x55 -\/ draws a dotted line (0b01010101) 
+\item 0xd7 -\/ draws a dashed line (0b11010111)
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in}  & {\em pattern} & the byte value representing the bitmap \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__display_ga76233358da6e394f00dddf557cb8d088}{\index{display@{display}!dd\-\_\-set\-\_\-mode@{dd\-\_\-set\-\_\-mode}}
+\index{dd\-\_\-set\-\_\-mode@{dd\-\_\-set\-\_\-mode}!display@{display}}
+\subsubsection[{dd\-\_\-set\-\_\-mode}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-set\-\_\-mode} (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{m}
+\end{DoxyParamCaption}
+)}}\label{group__display_ga76233358da6e394f00dddf557cb8d088}
+
+
+\-Set the \-Display \-Drawing \-Mode. 
+
+\-This is a command (\-D\-M) to the display controller which takes a single byte specifying the drawing mode. \-The command byte is defined as only the following letters \{\-C,$|$,!,$\sim$,\&,$^\wedge$\}. \-Where the meaning of the drawing mode is defined as one of the 6 modes available defined below\-:
+
+
+\begin{DoxyEnumerate}
+\item '\-C'-\/ \-Copy mode, it doesn’t matter what pixels exist on the screen;this mode uses the current foreground color to over write the pixel. \-For text displayed in any variant of the \-T\-T command, it will also clear the character box to the background color. \-Note that all other modes will not clear the character box.
+
+
+\item ‘$|$’ -\/ \-O\-R the current foreground color with the existing pixel. 
+\item ‘!’ -\/ \-N\-O\-T -\/ invert the color of the current pixel. 
+\item ‘\&’ -\/ \-A\-N\-D the current foreground color with the existing pixel. 
+\item ‘$^\wedge$’ -\/ \-X\-O\-R the current foreground color with the existing pixel. 
+\item \-A\-N\-Y -\/ \-Note that using any other letter will default to over-\/write mode (like '\-C') except the character box will not be cleared when using text commands via the \-T\-T command. \-This is recommended to display text on a picture.
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in}  & {\em m} & mode character as described above \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyEnumerate}\hypertarget{group__display_gad988058b08a1d4853ac978fedf6365f3}{\index{display@{display}!dd\-\_\-set\-\_\-printpos@{dd\-\_\-set\-\_\-printpos}}
+\index{dd\-\_\-set\-\_\-printpos@{dd\-\_\-set\-\_\-printpos}!display@{display}}
+\subsubsection[{dd\-\_\-set\-\_\-printpos}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-set\-\_\-printpos} (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{x, }
+\item[{unsigned char}]{y, }
+\item[{unsigned char}]{graph}
+\end{DoxyParamCaption}
+)}}\label{group__display_gad988058b08a1d4853ac978fedf6365f3}
+
+
+\-Setting \-Drawing \-Position. 
+
+\-Set the current drawing position for text or graphics mode. \-When resetting both the graphics and text drawing positions this routine should be called twice, once for graphics and another time for text.
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in}  & {\em x} & the x position \\
+\hline
+\mbox{\tt in}  & {\em y} & the y position \\
+\hline
+\mbox{\tt in}  & {\em graph} & when non-\/zero will reset the graphics drawing position, otherwise the text drawing position will be modified. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__display_gae6b8e55ba9a1e32f92d687c631d1ee6b}{\index{display@{display}!dd\-\_\-set\-\_\-rot@{dd\-\_\-set\-\_\-rot}}
+\index{dd\-\_\-set\-\_\-rot@{dd\-\_\-set\-\_\-rot}!display@{display}}
+\subsubsection[{dd\-\_\-set\-\_\-rot}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-set\-\_\-rot} (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{d}
+\end{DoxyParamCaption}
+)}}\label{group__display_gae6b8e55ba9a1e32f92d687c631d1ee6b}
+
+
+\-Set display rotation. 
+
+\-Set's the display rotation to one of the four specified angles 
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in}  & {\em d} & -\/ angle setting (one of the below) 
+\begin{DoxyItemize}
+\item 0 -\/ unchanged 
+\item 1 -\/ 90 degrees rotation 
+\item 2 -\/ 180 degrees rotation 
+\item 3 -\/ 270 degrees rotation 
+\end{DoxyItemize}\-N\-O\-T\-E that this setting affects the display, not the currently defined drawing region. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__display_gaf3ee28b3d5bad861fd1fea1b8e1ccd46}{\index{display@{display}!dd\-\_\-set\-\_\-text\-\_\-pos\-\_\-abs@{dd\-\_\-set\-\_\-text\-\_\-pos\-\_\-abs}}
+\index{dd\-\_\-set\-\_\-text\-\_\-pos\-\_\-abs@{dd\-\_\-set\-\_\-text\-\_\-pos\-\_\-abs}!display@{display}}
+\subsubsection[{dd\-\_\-set\-\_\-text\-\_\-pos\-\_\-abs}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-set\-\_\-text\-\_\-pos\-\_\-abs} (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{x, }
+\item[{unsigned char}]{y}
+\end{DoxyParamCaption}
+)}}\label{group__display_gaf3ee28b3d5bad861fd1fea1b8e1ccd46}
+
+
+\-Adjust the current text position to absolute offset. 
+
+\-Move \-H\-W text cursor to the the specified x/y offsets
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in}  & {\em xoffset} & displacement from 0-\/\-D\-I\-S\-P\-\_\-\-W \\
+\hline
+\mbox{\tt in}  & {\em yoffset} & displacement from 0-\/\-D\-I\-P\-\_\-\-H \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__display_ga599a978209e3d9c4e4d1f129ad21715c}{\index{display@{display}!dd\-\_\-set\-\_\-text\-\_\-pos\-\_\-back@{dd\-\_\-set\-\_\-text\-\_\-pos\-\_\-back}}
+\index{dd\-\_\-set\-\_\-text\-\_\-pos\-\_\-back@{dd\-\_\-set\-\_\-text\-\_\-pos\-\_\-back}!display@{display}}
+\subsubsection[{dd\-\_\-set\-\_\-text\-\_\-pos\-\_\-back}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-set\-\_\-text\-\_\-pos\-\_\-back} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{group__display_ga599a978209e3d9c4e4d1f129ad21715c}
+
+
+\-Set text position back one character (\-B\-S) 
+
+\-This virtual backspace allows you to repeatedly update one character \hypertarget{group__display_gad1a1870cebdd4e0df17d1ff9f990b40c}{\index{display@{display}!dd\-\_\-set\-\_\-text\-\_\-pos\-\_\-offset@{dd\-\_\-set\-\_\-text\-\_\-pos\-\_\-offset}}
+\index{dd\-\_\-set\-\_\-text\-\_\-pos\-\_\-offset@{dd\-\_\-set\-\_\-text\-\_\-pos\-\_\-offset}!display@{display}}
+\subsubsection[{dd\-\_\-set\-\_\-text\-\_\-pos\-\_\-offset}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-set\-\_\-text\-\_\-pos\-\_\-offset} (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{xoffset, }
+\item[{unsigned char}]{yoffset}
+\end{DoxyParamCaption}
+)}}\label{group__display_gad1a1870cebdd4e0df17d1ff9f990b40c}
+
+
+\-Adjust the current text position by specified offset. 
+
+\-This command will add the specified x/y offsets to the controllers internal \-H\-W cursor position to adjust the cursor position by the specified offsets.
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in}  & {\em xoffset} & displacement (positive or negative) in the x plane \\
+\hline
+\mbox{\tt in}  & {\em yoffset} & displacement (positive or negative) in the y plane \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__display_ga36c5c8c7450675727113efde002c7310}{\index{display@{display}!dd\-\_\-set\-\_\-truecolor@{dd\-\_\-set\-\_\-truecolor}}
+\index{dd\-\_\-set\-\_\-truecolor@{dd\-\_\-set\-\_\-truecolor}!display@{display}}
+\subsubsection[{dd\-\_\-set\-\_\-truecolor}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-set\-\_\-truecolor} (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{r, }
+\item[{unsigned char}]{g, }
+\item[{unsigned char}]{b}
+\end{DoxyParamCaption}
+)}}\label{group__display_ga36c5c8c7450675727113efde002c7310}
+
+
+set the drawing color in 24-\/bit mode 
+
+\-This routine sets the current drawing color in 24bpp mode
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em r} & the red component of the color (0-\/255) \\
+\hline
+{\em g} & the green component of the color (0-\/255) \\
+\hline
+{\em b} & the blue component of the color (0-\/255) \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__display_gad3a46b68468118bec6bac8e085614e43}{\index{display@{display}!dd\-\_\-setbgcolor@{dd\-\_\-setbgcolor}}
+\index{dd\-\_\-setbgcolor@{dd\-\_\-setbgcolor}!display@{display}}
+\subsubsection[{dd\-\_\-setbgcolor}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-setbgcolor} (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{color}
+\end{DoxyParamCaption}
+)}}\label{group__display_gad3a46b68468118bec6bac8e085614e43}
+
+
+set the current color as the background color 
+
+\-This routine will set the current (foreground) color to the background color.
+
+\-The color table is defined as below for 255 (indexed) color mode and can be found \href{http://www.digole.com/tools/256ColorCode.php}{\tt here }
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em color} & the color to set \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__display_gad4f4f9bfc3b024f4d561de88337e9e6f}{\index{display@{display}!dd\-\_\-setcolor@{dd\-\_\-setcolor}}
+\index{dd\-\_\-setcolor@{dd\-\_\-setcolor}!display@{display}}
+\subsubsection[{dd\-\_\-setcolor}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-setcolor} (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{color}
+\end{DoxyParamCaption}
+)}}\label{group__display_gad4f4f9bfc3b024f4d561de88337e9e6f}
+
+
+set the drawing color 
+
+\-This routine will set the color (0/1) for monochrome or (0-\/255) for color displays.
+
+\-The color table is defined as below for 255 (indexed) color mode and can be found \href{http://www.digole.com/tools/256ColorCode.php}{\tt here }\hypertarget{group__display_ga61bdf8470f0d64b1aee8700e74e24264}{\index{display@{display}!dd\-\_\-setfont@{dd\-\_\-setfont}}
+\index{dd\-\_\-setfont@{dd\-\_\-setfont}!display@{display}}
+\subsubsection[{dd\-\_\-setfont}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-setfont} (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{font}
+\end{DoxyParamCaption}
+)}}\label{group__display_ga61bdf8470f0d64b1aee8700e74e24264}
+
+
+set the font to be used from preloaded flash locations 
+
+\-This routine sets which character set should be loaded from the \-Character graphics ram (\-C\-G\-R\-A\-M). \-The \-R\-A\-M is implemented as \-F\-L\-A\-S\-H and font graphics can be saved into user defined regions.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em font} & the font to use -\/preloaded font \#'s are(6,10,18,51,120,123, and 0(default)); user font \#'s are (200,201,202,203) maps to 4 user fonts \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__display_ga30dd8928bfac3cfd234afe5983b13436}{\index{display@{display}!dd\-\_\-setpixel@{dd\-\_\-setpixel}}
+\index{dd\-\_\-setpixel@{dd\-\_\-setpixel}!display@{display}}
+\subsubsection[{dd\-\_\-setpixel}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-setpixel} (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{x, }
+\item[{unsigned char}]{y, }
+\item[{unsigned char}]{color}
+\end{DoxyParamCaption}
+)}}\label{group__display_ga30dd8928bfac3cfd234afe5983b13436}
+
+
+set a pixel a specified color 
+
+\-This routine sets a pixel at the provided x,y coordinate to the specified color value.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em x} & the x coordinate \\
+\hline
+{\em y} & the y coordinate \\
+\hline
+{\em color} & the color value \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__display_gaa01941111f8ffdbc902e88f198b1a383}{\index{display@{display}!dd\-\_\-upload\-\_\-start\-\_\-screen@{dd\-\_\-upload\-\_\-start\-\_\-screen}}
+\index{dd\-\_\-upload\-\_\-start\-\_\-screen@{dd\-\_\-upload\-\_\-start\-\_\-screen}!display@{display}}
+\subsubsection[{dd\-\_\-upload\-\_\-start\-\_\-screen}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-upload\-\_\-start\-\_\-screen} (
+\begin{DoxyParamCaption}
+\item[{int}]{len, }
+\item[{unsigned char $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{group__display_gaa01941111f8ffdbc902e88f198b1a383}
+
+
+download startup screen data to display controller 
+
+\-Upload display bitmap for startup screen
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in}  & {\em len} & the length of the bitmap (accounting for display mode) \\
+\hline
+\mbox{\tt in}  & {\em data} & the address of the data buffer \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__display_gaa6ec3ad2a963ba90eaafd805dbace08b}{\index{display@{display}!dd\-\_\-upload\-\_\-user\-\_\-font@{dd\-\_\-upload\-\_\-user\-\_\-font}}
+\index{dd\-\_\-upload\-\_\-user\-\_\-font@{dd\-\_\-upload\-\_\-user\-\_\-font}!display@{display}}
+\subsubsection[{dd\-\_\-upload\-\_\-user\-\_\-font}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-upload\-\_\-user\-\_\-font} (
+\begin{DoxyParamCaption}
+\item[{int}]{len, }
+\item[{unsigned char $\ast$}]{data, }
+\item[{unsigned char}]{sect}
+\end{DoxyParamCaption}
+)}}\label{group__display_gaa6ec3ad2a963ba90eaafd805dbace08b}
+
+
+upload font data 
+
+\-This routine allows for updating the font data onboard \-C\-G\-R\-A\-M
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em len} & the length of the data \\
+\hline
+{\em data} & the address of the font data buffer \\
+\hline
+{\em sect} & the section of memory to update \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__display_gad27d393cb4e4339dcd0671908e22b65c}{\index{display@{display}!dd\-\_\-vline@{dd\-\_\-vline}}
+\index{dd\-\_\-vline@{dd\-\_\-vline}!display@{display}}
+\subsubsection[{dd\-\_\-vline}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dd\-\_\-vline} (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{x, }
+\item[{unsigned char}]{y, }
+\item[{unsigned char}]{h}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{group__display_gad27d393cb4e4339dcd0671908e22b65c}
+
+
+draw a vertical line at specified position and height 
+
+\-This routine will draw a vertical line from the specified position using the specified height. \-When the line is done drawing the current graphics position is updated to x,y+h.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em x} & the x coordinate \\
+\hline
+{\em y} & the y coordinate \\
+\hline
+{\em h} & the height of the line \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__display_ga17ea27854f28b826df824f8fb5b76ee7}{\index{display@{display}!draw\-\_\-bitmap@{draw\-\_\-bitmap}}
+\index{draw\-\_\-bitmap@{draw\-\_\-bitmap}!display@{display}}
+\subsubsection[{draw\-\_\-bitmap}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf draw\-\_\-bitmap} (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{x, }
+\item[{unsigned char}]{y, }
+\item[{unsigned char}]{w, }
+\item[{unsigned char}]{h, }
+\item[{unsigned char $\ast$}]{bitmap}
+\end{DoxyParamCaption}
+)}}\label{group__display_ga17ea27854f28b826df824f8fb5b76ee7}
+
+
+\-Draw monochrome bitmap. 
+
+\-This routine draws a black \& white image at the specified x,y coordinates. \-Note that the image is represented in 1bpp format and is affected by the foreground color and drawing mode (e.\-g. you can set a different foreground color before drawing and make a different color image).
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in}  & {\em x} & the top left x coordinate for where to draw the bitmap \\
+\hline
+\mbox{\tt in}  & {\em y} & the top left y coordinate for where to draw the bitmap \\
+\hline
+\mbox{\tt in}  & {\em w} & the width of the bitmap \\
+\hline
+\mbox{\tt in}  & {\em h} & the height of the bitmap \\
+\hline
+\mbox{\tt in}  & {\em bitmap} & image data (...d...), each bit represent a pixel in the image. \-Data in one byte can’t cross different lines, that means, if the width of image is 12 pixels, you need 2 bytes for each line. \-The \-M\-S\-B is on the left side. \\
+\hline
+\end{DoxyParams}
+\-N\-O\-T\-E\-: the current graphics \-H\-W cursor positin (\-C\-G\-P) is unchanged. \hypertarget{group__display_gac8bd0fbcbea79baa54d11e5b5882b7cd}{\index{display@{display}!ms\-\_\-delay@{ms\-\_\-delay}}
+\index{ms\-\_\-delay@{ms\-\_\-delay}!display@{display}}
+\subsubsection[{ms\-\_\-delay}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf ms\-\_\-delay} (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{usecs}
+\end{DoxyParamCaption}
+)}}\label{group__display_gac8bd0fbcbea79baa54d11e5b5882b7cd}
+
+
+millisecond delay 
+
+\-Delay specified number of milliseconds, the processor will wait this amount of time before continuing execution.
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in}  & {\em usecs} & the number of milliseconds to sleep \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__display_ga07e69aff750648fd47a75afc4da8c0d4}{\index{display@{display}!us\-\_\-delay@{us\-\_\-delay}}
+\index{us\-\_\-delay@{us\-\_\-delay}!display@{display}}
+\subsubsection[{us\-\_\-delay}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf us\-\_\-delay} (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{usecs}
+\end{DoxyParamCaption}
+)}}\label{group__display_ga07e69aff750648fd47a75afc4da8c0d4}
+
+
+microsecond delay 
+
+\-Delay specified number of microseconds, the processor will wait this amount of time before continuing execution.
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in}  & {\em usecs} & the number of microseconds to sleep \\
+\hline
+\end{DoxyParams}

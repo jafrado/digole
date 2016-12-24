@@ -1,0 +1,124 @@
+\hypertarget{digole_8c}{\section{digole.\-c \-File \-Reference}
+\label{digole_8c}\index{digole.\-c@{digole.\-c}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+{\ttfamily \#include $<$string.\-h$>$}\*
+{\ttfamily \#include $<$termios.\-h$>$}\*
+{\ttfamily \#include $<$sys/select.\-h$>$}\*
+{\ttfamily \#include $<$unistd.\-h$>$}\*
+{\ttfamily \#include $<$sys/time.\-h$>$}\*
+{\ttfamily \#include $<$sys/types.\-h$>$}\*
+{\ttfamily \#include $<$errno.\-h$>$}\*
+{\ttfamily \#include \char`\"{}digole.\-h\char`\"{}}\*
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{digole_8c_a4262428157069a043f11f0d8e00c1eba}{int {\bfseries com\-\_\-fd}}\label{digole_8c_a4262428157069a043f11f0d8e00c1eba}
+
+\item 
+void \hyperlink{group__display_ga07e69aff750648fd47a75afc4da8c0d4}{us\-\_\-delay} (unsigned int usecs)
+\begin{DoxyCompactList}\small\item\em microsecond delay \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gac8bd0fbcbea79baa54d11e5b5882b7cd}{ms\-\_\-delay} (unsigned int usecs)
+\begin{DoxyCompactList}\small\item\em millisecond delay \end{DoxyCompactList}\item 
+int \hyperlink{group__io_ga8ea911d05f1e9020b6c03b5000d75868}{writen} (int fd, unsigned char $\ast$ptr, int nbytes)
+\begin{DoxyCompactList}\small\item\em write n bytes of data to a file descriptor \end{DoxyCompactList}\item 
+\hypertarget{digole_8c_a14c446ee64d5ceb71ff4cb7a6b02d22e}{void {\bfseries print\-\_\-com} (int fd, unsigned char $\ast$buf)}\label{digole_8c_a14c446ee64d5ceb71ff4cb7a6b02d22e}
+
+\item 
+void \hyperlink{group__display_ga2c63ec2b4e0ad55ca0a8c6d3b59cec29}{dd\-\_\-println} (unsigned char $\ast$v)
+\begin{DoxyCompactList}\small\item\em \-Print a line of text. \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gaa7cf318c844e09b44ba46b498ee9c61b}{dd\-\_\-disable\-\_\-cursor} (void)
+\begin{DoxyCompactList}\small\item\em \-Disable cursor. \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gac87dcc801a81225439938546afc3aeca}{dd\-\_\-enable\-\_\-cursor} (void)
+\begin{DoxyCompactList}\small\item\em \-Enable cursor. \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gadc3cefb31b0c5e2048f33bf0e32af331}{dd\-\_\-draw\-\_\-str} (unsigned char x, unsigned char y, unsigned char $\ast$s)
+\begin{DoxyCompactList}\small\item\em \-Draw string. \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gad988058b08a1d4853ac978fedf6365f3}{dd\-\_\-set\-\_\-printpos} (unsigned char x, unsigned char y, unsigned char graph)
+\begin{DoxyCompactList}\small\item\em \-Setting \-Drawing \-Position. \end{DoxyCompactList}\item 
+void \hyperlink{group__display_ga2148fb37938f252395fda6f9d57eebbc}{dd\-\_\-clear\-\_\-screen} (void)
+\begin{DoxyCompactList}\small\item\em \-Clear \-Screen. \end{DoxyCompactList}\item 
+void \hyperlink{group__display_ga51372d6a4a835af59fb125047480817d}{dd\-\_\-set\-\_\-lcd\-\_\-colrow} (unsigned char col, unsigned char row)
+\begin{DoxyCompactList}\small\item\em \-Set number of columns and rows for text-\/mode. \end{DoxyCompactList}\item 
+void \hyperlink{group__display_ga0abe17f5102182bf238c73d4a50a8e8a}{dd\-\_\-display\-\_\-config} (unsigned char v)
+\begin{DoxyCompactList}\small\item\em \-Display the display configuration on boot. \end{DoxyCompactList}\item 
+void \hyperlink{group__display_ga5353e51faeecba308836d1f9f9099783}{dd\-\_\-display\-\_\-startscreen} (unsigned char m)
+\begin{DoxyCompactList}\small\item\em \-Display the start screen on power-\/up/boot. \end{DoxyCompactList}\item 
+void \hyperlink{group__display_ga76233358da6e394f00dddf557cb8d088}{dd\-\_\-set\-\_\-mode} (unsigned char m)
+\begin{DoxyCompactList}\small\item\em \-Set the \-Display \-Drawing \-Mode. \end{DoxyCompactList}\item 
+void \hyperlink{group__display_ga599a978209e3d9c4e4d1f129ad21715c}{dd\-\_\-set\-\_\-text\-\_\-pos\-\_\-back} (void)
+\begin{DoxyCompactList}\small\item\em \-Set text position back one character (\-B\-S) \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gad1a1870cebdd4e0df17d1ff9f990b40c}{dd\-\_\-set\-\_\-text\-\_\-pos\-\_\-offset} (unsigned char xoffset, unsigned char yoffset)
+\begin{DoxyCompactList}\small\item\em \-Adjust the current text position by specified offset. \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gaf3ee28b3d5bad861fd1fea1b8e1ccd46}{dd\-\_\-set\-\_\-text\-\_\-pos\-\_\-abs} (unsigned char x, unsigned char y)
+\begin{DoxyCompactList}\small\item\em \-Adjust the current text position to absolute offset. \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gaae519dd067406a1cc1eca1e1d25c1bc6}{dd\-\_\-set\-\_\-line\-\_\-pattern} (unsigned char pattern)
+\begin{DoxyCompactList}\small\item\em \-Set the line pattern for line drawing operations. \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gaf1d94e3624be89a4d250604472673fa2}{dd\-\_\-digital\-\_\-output} (unsigned char x)
+\begin{DoxyCompactList}\small\item\em digital port output \end{DoxyCompactList}\item 
+void \hyperlink{group__display_ga17ea27854f28b826df824f8fb5b76ee7}{draw\-\_\-bitmap} (unsigned char x, unsigned char y, unsigned char w, unsigned char h, unsigned char $\ast$bitmap)
+\begin{DoxyCompactList}\small\item\em \-Draw monochrome bitmap. \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gae6b8e55ba9a1e32f92d687c631d1ee6b}{dd\-\_\-set\-\_\-rot} (unsigned char d)
+\begin{DoxyCompactList}\small\item\em \-Set display rotation. \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gada2afd62a98dcc9dd5f232209a5c996f}{dd\-\_\-set\-\_\-contrast} (unsigned char c)
+\begin{DoxyCompactList}\small\item\em set the display contrast \end{DoxyCompactList}\item 
+void \hyperlink{group__display_ga65e9f64a382ffdd6724e8412ef79c05f}{dd\-\_\-draw\-\_\-box} (unsigned char x, unsigned char y, unsigned char w, unsigned char h)
+\begin{DoxyCompactList}\small\item\em draw a box \end{DoxyCompactList}\item 
+void \hyperlink{group__display_ga583b488e0a33d91c7422b17bcd3ca75d}{dd\-\_\-draw\-\_\-circle} (int8\-\_\-t x, unsigned char y, unsigned char r, unsigned char f)
+\begin{DoxyCompactList}\small\item\em draw a circle \end{DoxyCompactList}\item 
+void \hyperlink{group__display_ga62392dbfb72a9071166abdffb6835c18}{dd\-\_\-draw\-\_\-frame} (unsigned char x, unsigned char y, unsigned char w, unsigned char h)
+\begin{DoxyCompactList}\small\item\em draw a frame (rectangle) \end{DoxyCompactList}\item 
+void \hyperlink{group__display_ga30dd8928bfac3cfd234afe5983b13436}{dd\-\_\-setpixel} (unsigned char x, unsigned char y, unsigned char color)
+\begin{DoxyCompactList}\small\item\em set a pixel a specified color \end{DoxyCompactList}\item 
+void \hyperlink{group__display_ga9fe0d2c43ae2407191b9a522bb580686}{dd\-\_\-drawline} (unsigned char x, unsigned char y, unsigned char x1, unsigned char y1)
+\begin{DoxyCompactList}\small\item\em draw a line \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gae7182b6fde52b4264b22cc5c4cdbae0b}{dd\-\_\-lineto} (unsigned char x, unsigned char y)
+\begin{DoxyCompactList}\small\item\em draw a line from the current position to a new position \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gaa6fe3be96609537f1dde783a815a51f6}{dd\-\_\-hline} (unsigned char x, unsigned char y, unsigned char w)
+\begin{DoxyCompactList}\small\item\em draw a horizontal line at specified position and width \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gad27d393cb4e4339dcd0671908e22b65c}{dd\-\_\-vline} (unsigned char x, unsigned char y, unsigned char h)
+\begin{DoxyCompactList}\small\item\em draw a vertical line at specified position and height \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gaef33ebb295da7922b27439cd181b3598}{dd\-\_\-next\-\_\-text\-\_\-line} (void)
+\begin{DoxyCompactList}\small\item\em move text cursor to new line \end{DoxyCompactList}\item 
+void \hyperlink{group__display_ga61bdf8470f0d64b1aee8700e74e24264}{dd\-\_\-setfont} (unsigned char font)
+\begin{DoxyCompactList}\small\item\em set the font to be used from preloaded flash locations \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gad4f4f9bfc3b024f4d561de88337e9e6f}{dd\-\_\-setcolor} (unsigned char color)
+\begin{DoxyCompactList}\small\item\em set the drawing color \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gad3a46b68468118bec6bac8e085614e43}{dd\-\_\-setbgcolor} (unsigned char color)
+\begin{DoxyCompactList}\small\item\em set the current color as the background color \end{DoxyCompactList}\item 
+\hypertarget{group__display_ga67f32f8cba110a28ce464d71acc53399}{void \hyperlink{group__display_ga67f32f8cba110a28ce464d71acc53399}{dd\-\_\-backlight\-\_\-on} (void)}\label{group__display_ga67f32f8cba110a28ce464d71acc53399}
+
+\begin{DoxyCompactList}\small\item\em turn on backlight \end{DoxyCompactList}\item 
+\hypertarget{group__display_ga7e782e79678f36dabaaf509071c05874}{void \hyperlink{group__display_ga7e782e79678f36dabaaf509071c05874}{dd\-\_\-backlight\-\_\-off} (void)}\label{group__display_ga7e782e79678f36dabaaf509071c05874}
+
+\begin{DoxyCompactList}\small\item\em turn off backlight \end{DoxyCompactList}\item 
+\hypertarget{group__display_ga7ee3fe530efeed2df71f53c0ed6c8b0b}{void \hyperlink{group__display_ga7ee3fe530efeed2df71f53c0ed6c8b0b}{dd\-\_\-set\-\_\-screen\-\_\-on} (void)}\label{group__display_ga7ee3fe530efeed2df71f53c0ed6c8b0b}
+
+\begin{DoxyCompactList}\small\item\em turn on screen \end{DoxyCompactList}\item 
+\hypertarget{group__display_gab7c7001528cccf3610b9651364842d91}{void \hyperlink{group__display_gab7c7001528cccf3610b9651364842d91}{dd\-\_\-set\-\_\-screen\-\_\-off} (void)}\label{group__display_gab7c7001528cccf3610b9651364842d91}
+
+\begin{DoxyCompactList}\small\item\em turn off screen \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gad27debe11f640b4939c4b6f88d534080}{dd\-\_\-direct\-\_\-command} (unsigned char d)
+\begin{DoxyCompactList}\small\item\em send direct command to display \end{DoxyCompactList}\item 
+void \hyperlink{group__display_ga5b9f3252e68b2a5b20242f7c0e2f8c77}{dd\-\_\-direct\-\_\-data} (unsigned char d)
+\begin{DoxyCompactList}\small\item\em send direct data to display \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gae0257daad0038af711eae17127882d94}{dd\-\_\-move\-\_\-area} (unsigned char x0, unsigned char y0, unsigned char w, unsigned char h, unsigned char xoffset, unsigned char yoffset)
+\begin{DoxyCompactList}\small\item\em move screen memory area from one location to another \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gaa01941111f8ffdbc902e88f198b1a383}{dd\-\_\-upload\-\_\-start\-\_\-screen} (int len, unsigned char $\ast$data)
+\begin{DoxyCompactList}\small\item\em download startup screen data to display controller \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gaa6ec3ad2a963ba90eaafd805dbace08b}{dd\-\_\-upload\-\_\-user\-\_\-font} (int len, unsigned char $\ast$data, unsigned char sect)
+\begin{DoxyCompactList}\small\item\em upload font data \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gae40465af03e74db8719be97f188e50ec}{dd\-\_\-draw\-\_\-bitmap256} (unsigned char x, unsigned char y, unsigned char w, unsigned char h, unsigned char $\ast$bitmap)
+\begin{DoxyCompactList}\small\item\em draw a 256-\/color bitmap \end{DoxyCompactList}\item 
+void \hyperlink{group__display_ga0d9fff0e64c704ca0698a3ed4ad9a324}{dd\-\_\-draw\-\_\-bitmap262\-K} (unsigned char x, unsigned char y, unsigned char w, unsigned char h, unsigned char $\ast$bitmap)
+\begin{DoxyCompactList}\small\item\em draw a 262\-K-\/color bitmap \end{DoxyCompactList}\item 
+void \hyperlink{group__display_ga36c5c8c7450675727113efde002c7310}{dd\-\_\-set\-\_\-truecolor} (unsigned char r, unsigned char g, unsigned char b)
+\begin{DoxyCompactList}\small\item\em set the drawing color in 24-\/bit mode \end{DoxyCompactList}\item 
+void \hyperlink{group__display_ga29851960a87e3aa2636a801d1e708460}{dd\-\_\-reset\-\_\-draw\-\_\-win} (void)
+\begin{DoxyCompactList}\small\item\em reset the drawing window to full screen \end{DoxyCompactList}\item 
+void \hyperlink{group__display_gab8af836c33fea603bb9cf83e45e5c872}{dd\-\_\-clean\-\_\-win} (void)
+\begin{DoxyCompactList}\small\item\em clear drawing window \end{DoxyCompactList}\item 
+void \hyperlink{group__display_ga0cc1e04b79d1fa95b3b3028ca31420f0}{dd\-\_\-define\-\_\-win} (unsigned char x, unsigned char y, unsigned char h, unsigned char w)
+\begin{DoxyCompactList}\small\item\em define drawing window \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
