@@ -1,11 +1,7 @@
-# digole
-Digole Display Driver
-
 # Overview
 
 This library implements Text and Graphics functionality for the Digole Serial OLED Display modules made by Digole . Tested and verified with Digole 1.8" Serial: UART/I2C/SPI True Color OLED160x128 OLED Module DS160128COLED-46
-# Platform support
-Initial testing has been done on Ubuntu 11-16
+Platform Support
 
 # HW Setup
 For testing and initial bringup, the core library runs on Linux via USB Serial and only 3 wires (TXD, VCC, GND) are soldered to the module. Pinout is defined as below:
@@ -23,6 +19,9 @@ For more information on the FTDI USB->Serial Adapter Cable, see also: http://www
 The Digole HW module is setup as below. Pin-out for the module is from the Digole HW Adapter manual:
 ![HW Setup Diagram](http://realflightsystems.com/techpubs/digole/hw_setup_ttl2323v3.jpg)
 
+# API Documentation
+Doxygen is used for [API Documentation](http://realflightsystems.com/techpubs/digole/html/index.html)
+
 # Porting
 Relevant porting files and API's are defined in io.c and serial.c for the Linux platform
 
@@ -38,12 +37,12 @@ See also: http://www.digole.com//images/file/Tech_Data/Digole_Serial_Display_Ada
 
 ## Software
 
-The software is written in C99, Linux kernel coding style and is distributed under the MIT license.
-Doxygen is used for API Documentation.
+The software is written in C99, Linux kernel coding style and is distributed under the MIT License.
+Doxygen is used for[http://realflightsystems.com/techpubs/digole/html/](API Documentation)
 
 
 ## Copyright
     Copyright (C) 2016 Real Flight Systems 
 
 ## Author
-    James F Dougherty <jfd@realflightsystems.com
+    James F Dougherty <jfd@realflightsystems.com> 
