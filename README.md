@@ -36,6 +36,12 @@ See also: http://www.digole.com/index.php?productID=859
 
 See also: http://www.digole.com//images/file/Tech_Data/Digole_Serial_Display_Adapter-Manual.pdf
 
+## Software
+
+The software is written in C99, Linux kernel coding style and is distributed under the MIT license.
+Doxygen is used for API Documentation.
+
+
 ## Copyright
     Copyright (C) 2016 Real Flight Systems 
 
