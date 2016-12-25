@@ -27,6 +27,15 @@ Relevant porting files and API's are defined in io.c and serial.c for the Linux 
 
 # Testing
 A test application (oledtest) is provided to verify the functionality and perform testing.
+Some snapshots are shown below.
+![Black cat image](http://realflightsystems.com/techpubs/digole/black-cat-128x128_rendered.jpg)
+![Bahamas image](http://realflightsystems.com/techpubs/digole/bahamas3_160x108_rendered.jpg)
+![Rendered text](http://realflightsystems.com/techpubs/digole/text_rendered.jpg)
+![Blackrock Truecolor Image](http://realflightsystems.com/techpubs/digole/Aidain_Sojourner_ID2015_BR_4thofJuplaya_160x120_rendered.JPG)
+
+A [mandelbrot fractal generator](http://www.physics.emory.edu/faculty/weeks//software/mand.html) program which outputs PNG has been modified to use the display library.
+ ![Mandelbrot image](http://realflightsystems.com/techpubs/digole/mandelbrot.jpg)
+
 Additional utilities and test applications may be provided in the future.
 
 # Reference
@@ -46,3 +55,4 @@ Doxygen is used for[http://realflightsystems.com/techpubs/digole/html/](API Docu
 
 ## Author
     James F Dougherty <jfd@realflightsystems.com> 
+
