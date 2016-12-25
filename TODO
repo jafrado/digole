@@ -1,0 +1,46 @@
+TODO List
+
+Wishlist (for Digole)
+------------------------
+
+1) v3.0 does not allow for selecting the text position in graphics mode;
+  this would allow placing text over an icon
+
+2) Offscreen memory - high quality animations may be developed by allowing
+  the MA command can be used for BitBLT by allow an offscreen address to
+  be provided and a separate command to "carve up" ram into some number
+  of slots (say 1KB/each). With 4KB ram you can have 4 slots!
+
+  /* Load 4 bitmaps into memory and then cycle */
+
+   for (i = 0; i < 4; i++) {
+      dd_bank_config(i, 1024); /* 4 banks of 1K */
+   }
+
+   /* Load 4 banks - we draw bitmap onscreen and copy offscreen*/
+  for (i = 0; i < 4; i++) {
+          draw_bitmap(0, 0, 16, 16, &img[i]);
+	  dd_copy_area(ON2OFF, 0,  16, 16, i);
+  }
+
+  /* Loop forever copying off-screen to on-screen and affect animation */
+  while(1) { 
+  	  ++i %= 4;
+	  dd_copy_area(OFF2ON, 0, 0,  16, 16, i);
+  	   
+  }
+
+3) Faster baud rates, 1Mbaud would allow operation in 262K color mode
+   for small glyphs
+
+4) Documentation on how to connect RX to a UART. I plan to implement flash
+   loading and firmware update 
+
+
+James' Wishlist
+===============
+- UI/Widget library (small enough for control panels)
+- JPEG/PNG Loader
+- Picture-frame app
+- Mapping app
+- Other wishlist items?

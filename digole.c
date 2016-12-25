@@ -435,6 +435,7 @@ void dd_draw_circle(int8_t x, unsigned char y,
 	write(com_fd, &y, 1);
 	write(com_fd, &r, 1);
 	write(com_fd, &f, 1);
+	delay(1000);
 }
 
 /**
