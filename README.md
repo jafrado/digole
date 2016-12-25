@@ -1,5 +1,5 @@
 # digole
-Digole Display Driver for Linux
+Digole Display Driver
 
 # Overview
 
