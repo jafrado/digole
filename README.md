@@ -1,7 +1,6 @@
 # Overview
 
-This library implements Text and Graphics functionality for the Digole Serial OLED Display modules made by Digole . Tested and verified with Digole 1.8" Serial: UART/I2C/SPI True Color OLED160x128 OLED Module DS160128COLED-46
-Platform Support
+This library implements Text and Graphics functionality for the Digole Serial OLED Display modules made by Digole . Tested and verified with [Digole 1.8" Serial: UART/I2C/SPI OLED True Color 160x128  OLED Module DS160128COLED-46](http://www.digole.com/index.php?productID=859)
 
 # HW Setup
 For testing and initial bringup, the core library runs on Linux via USB Serial and only 3 wires (TXD, VCC, GND) are soldered to the module. Pinout is defined as below:
@@ -55,4 +54,3 @@ Doxygen is used for[http://realflightsystems.com/techpubs/digole/html/](API Docu
 
 ## Author
     James F Dougherty <jfd@realflightsystems.com> 
-
