@@ -1,3 +1,7 @@
+/*
+ * See also: http://www.digole.com/tools/PicturetoC_Hex_converter.php
+ * This file was created in 262K color mode from doc/Aidain_Sojourner_ID2015_BR_4thofJuplaya_160x120.JPG
+ */
 
 unsigned char img_262k[]={
   'E','D','I','M','3',0x00,0x00,0x80,0x80,

@@ -29,6 +29,9 @@ extern int img_256_size;
 extern unsigned char img_compass[];
 extern int img_compass_size;
 
+#define N_COLORS 9
+int colors[] = { RED, ORANGE, YELLOW, GREEN, CYAN, BLUE, PURPLE, WHITE, BLACK, 0};
+
 /**
  * @brief main test application
  * 
@@ -61,10 +64,14 @@ int main(int argc, char* argv[])
 		exit(2);
 	}
 
+	print("Running in 115Kbps mode\n");
 
-	int colors[] = { 0xe4, 0x43, 0xe2, 0x7c, 0x5f, 0xfc, 0xff, 0};
-
+	dd_setcolor(0); /* black background */
+	dd_setbgcolor(0);
+	dd_setcolor(0xff); /* white foreground */
 #if 1
+	/* TESTS */
+	printf("Bitmap load testing\n");
 
 	/* Monochrome Bitmap */
 	dd_set_mode('C');
@@ -81,42 +88,44 @@ int main(int argc, char* argv[])
 	dd_set_printpos(0,0, 1);
 	dd_set_printpos(0,0, 0);
 	dd_clear_screen();	
-	printf("Loading AMG Image (Monochrome) 160x128 - %d bytes\n",
-	       amg_img_size);
+	printf("Loading AMG Image (Monochrome) 160x128 - %d bytes\n", amg_img_size);
 	draw_bitmap(0,0, 160, 128, &amg_img[8]);
 	printf("done\n");
 	sleep(5);
 
+	/* 256 Color Mode */
 	dd_set_mode('C');
 	dd_set_printpos(0,0, 1);
 	dd_clear_screen();	
-
-	printf("Loading Black Cat Image (256 color) 128x128 - %d bytes\n",
-	       black_cat_img_size);
-
+	printf("Loading Black Cat Image (256 color) 128x128 - %d bytes\n",black_cat_img_size);
 	dd_draw_bitmap256(16,0,128,128, &black_cat_img[8]);
 	printf("done\n");
 	sleep(5);
 
-
-	printf("Loading Bahamas Image (256 color) 160x108 - %d bytes\n",
-	       img_256_size);
-
+	/* 256 Color mode */
+	dd_set_mode('C');
+	dd_set_printpos(0,0, 1);
+	dd_clear_screen();	
+	printf("Loading Bahamas Image (256 color) 160x108 - %d bytes\n",img_256_size);
 	dd_draw_bitmap256(0,0,160,108, &img_256[8]);
 	printf("done\n");
 	sleep(5);
 
-
+	/* 262K color bitmap */
 	dd_set_mode('C');
 	dd_set_printpos(0,0, 1);
 	dd_clear_screen();	
-
 	printf("Loading Image (262K color) 128x128 - %d bytes\n",
 	       img_262k_size);
 	dd_draw_bitmap262K(16,0,128,128, &img_262k[8]);
 
+	sleep(5);
 
-#if 0
+	printf("2D testing\n");
+
+
+	printf("Pixel testing\n");
+
 	dd_set_mode('C');
 	dd_set_printpos(0,0, 1);
 	dd_clear_screen();	
@@ -127,49 +136,100 @@ int main(int argc, char* argv[])
 			dd_setpixel(i, j, colors[i% 16]);
 		}
 
+	printf("HLine test\n");
+	dd_clear_screen();
+	dd_set_printpos(0,0,1);
+	for (i = 0; colors[i]; i++) { 
+		for(j = 0; j < DISP_H; j+=2){
+			dd_setcolor(colors[i]);
+			dd_hline(0, j, DISP_W);
+		}
+	}
+	sleep(1);
+	printf("VLine test\n");
+	dd_clear_screen();
+	dd_set_printpos(0,0,1);
+	for (i = 0; i < colors[i]; i++) { 
+		for(j = 0; j < DISP_W; j+=2){
+			dd_setcolor(colors[i]);
+			dd_vline(j, 0, DISP_H);
+		}
+	}
+	sleep(1);
+	printf("VLine Test (Dotted/White)\n");
+	dd_clear_screen();
+	dd_set_printpos(0,0,1);
+	dd_set_line_pattern(0x55);
+	dd_setcolor(WHITE);
+
+	for(j = 0; j < DISP_W; j+=2){
+		dd_vline(j, 0, DISP_H);
+	}
+	sleep(2);
+	printf("VLine Test (Dashed/Yellow)\n");
+	dd_clear_screen();
+	dd_set_printpos(0,0,1);
+	dd_set_line_pattern(0xd7);
+	dd_setcolor(YELLOW);
+	for(j = 0; j < DISP_H; j+=2){
+		dd_hline(0, j, DISP_W);
+	}
+	sleep(2);
+	printf("Text Mode/Monochrome Color testing\n");
 	dd_set_mode('C');
 	dd_set_printpos(0,0, 1);
 	dd_clear_screen();	
-
 	i = 0;
 	while(colors[i] != 0) { 
 		dd_setcolor(colors[i]);
 		dd_draw_box(0,0, 160, 128);
 
-		dd_setbgcolor(colors[i+1]);
+		dd_setbgcolor(colors[i % N_COLORS]);
 		dd_setcolor(colors[i]);
 		dd_draw_str(0, 0, "Hello World");
 		dd_draw_str(0, 1, "This is a line 1");
 		dd_draw_str(0, 2, "This is a line 2");
 		dd_draw_str(0, 3, "This is a line 3");
 		i++;
-
 		sleep(1);
 	}
 #endif
 
-
-
-
-#else
+	sleep(1);
 	dd_clear_screen();
-//	dd_set_mode(_TEXT_);
-	i = 0;
+	dd_setcolor(0); /* black background */
+	dd_setbgcolor(0);
+	dd_setcolor(0xff); /* white foreground */
+	/* Color cycle */
 
+	i = 1;
+	printf("Looping through colors forever... Press Ctrl-C to stop\n");
 	while(1) { 
 		i %= 256;
 		dd_setcolor(i);
-//		dd_setbgcolor(0+i);
-		dd_draw_str(0, 0, "Hello World");
-		sprintf(buf, "Color %d 0x%02x\n", i, i);
-		dd_draw_str(0, 1, buf);
-		dd_draw_str(0, 2, "This is a line 2");
-		dd_draw_str(0, 3, "This is a line 3");
+		dd_draw_str(0, 0, "The quick brown fox ");
+		dd_draw_str(0, 1, "jumps over the lazy ");
+		dd_draw_str(0, 2, "dog. Line #3        ");
+		sprintf(buf, "Color %d 0x%02x          ", i, i);
+		dd_draw_str(0, 3, buf);
+		/* Circle pattern */
+		dd_draw_box(0, 60, 60, 60);
+		dd_setcolor(0);
+		dd_draw_circle(30,90, 20, 1);
+		dd_setcolor(i);
+		dd_draw_circle(30,90, 10, 1);
+		/* Hatch pattern */
+		dd_set_line_pattern(0x55);
+		for(j = 0; j < 60; j+=2){
+			dd_vline(60+j, 60, 60);
+		}
+		dd_set_line_pattern(0xff);
+		dd_setcolor(0);
+
 		i++;
 		sleep(1);
 	}
-#endif
-
+	printf("Closing COM\n");
 	serial_close(com_fd);
 	return 0;
 }

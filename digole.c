@@ -500,6 +500,7 @@ void dd_drawline(unsigned char x, unsigned char y,
 	write(com_fd, &y, 1);
 	write(com_fd, &x1, 1);
 	write(com_fd, &y1, 1);
+	delay(10);
 }
 
 /**
@@ -518,6 +519,7 @@ void dd_lineto(unsigned char x, unsigned char y)
 	print("LT");
 	write(com_fd, &x, 1);
 	write(com_fd, &y, 1);
+	delay(10);
 }
 
 /**
@@ -531,7 +533,7 @@ void dd_lineto(unsigned char x, unsigned char y)
  * @param y the y coordinate
  * @param w the width of the line
  */
-inline void dd_hline(unsigned char x, unsigned char y, unsigned char w) 
+void dd_hline(unsigned char x, unsigned char y, unsigned char w) 
 {
 	dd_drawline(x, y, x + w, y);
 }
@@ -547,7 +549,7 @@ inline void dd_hline(unsigned char x, unsigned char y, unsigned char w)
  * @param y the y coordinate
  * @param h the height of the line
  */
-inline void dd_vline(unsigned char x, unsigned char y, unsigned char h) 
+void dd_vline(unsigned char x, unsigned char y, unsigned char h) 
 {
 	dd_drawline(x, y, x, y + h);
 }

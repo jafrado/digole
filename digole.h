@@ -60,6 +60,22 @@
  * @{
  */
 
+
+/**
+ * @brief - basic color palette
+ */
+enum COLORS{
+	CYAN     = 0x5B,
+	RED      = 0xE4,
+	ORANGE   = 0xEC,
+	PURPLE   = 0x66,
+	YELLOW   = 0xFC,
+	WHITE    = 0xFF,
+	BLACK    = 0x00,
+	GREEN    = 0x3C,
+	BLUE     = 0x03
+};
+
 /* Change for your Display */
 #define DISP_W  (160)  /*!< screen \a width in pixels */
 #define DISP_H  (128)  /*!< screen \a height in pixels */
