@@ -199,6 +199,7 @@ void dd_display_config(unsigned char v)
 {
         print("DC");
         write(com_fd, &v, 1);
+	delay(50);
 }
 /** 
  * @brief Display the start screen on power-up/boot
@@ -213,6 +214,7 @@ void dd_display_startscreen(unsigned char m)
 {
         print("DSS");
         write(com_fd, &m, 1);
+	delay(50);
 } 
 
 /** 
@@ -579,6 +581,7 @@ void dd_setfont(unsigned char font)
 {
 	print("SF");
 	write(com_fd, &font, 1);
+	delay(50);
 }
 /**
  * @brief set the drawing color
@@ -699,6 +702,9 @@ void dd_move_area(unsigned char x0, unsigned char y0,
  * @brief download startup screen data to display controller
  * 
  * Upload display bitmap for startup screen
+ * 
+ * NOTE: since v3.0 firmware (and for color OLED), this command will
+ * upload an array of commands, which can, in effect be any command. 
  *
  * @param[in] len the length of the bitmap (accounting for display mode)
  * @param[in] data the address of the data buffer
@@ -707,17 +713,53 @@ void dd_upload_start_screen(int len, unsigned char *data)
 {
 	int j;
 	unsigned char u;
+	printf("start screen: %d bytes \n", len);
+
+	if (len > 2046) { /* actually 2046 */
+	  printf("NOTE: max length %d (0x0x), truncating...\n", 2048, 2048);
+	  len = 2044; /* 2 bytes of command */
+	}
 	print("SSS");
+
+	/* Total length of data - including this message */
+	printf("provided len=%d\n", len);
+	len+=2;
+	printf("updated len %d (2 bytes of len)\n", len);
+
+	len+=2; 
+	printf("controller len %d (+2 more bytes of len)\n", len);
+
 	u = (len % 256);
 	write(com_fd, &u, 1);
+	printf("bc msb: %02x\n", u);
+
 	u = (len / 256);
 	write(com_fd, &u, 1);
+	printf("bc lsb: %02x\n", u);
+
+	len -= 2;
+
+	u = (len / 256);
+	write(com_fd, &u, 1);
+	printf("bc lsb: %02x\n", u);
+
+	u = (len % 256);
+	write(com_fd, &u, 1);
+	printf("bc msb: %02x\n", u);
+
+
+	len -= 2;
 	delay(300);
+
+
 	for (j = 0; j < len; j++) {
 		if((j%32)==0) {
 			delay(50);
 			delay(INTERNAL_DELAY);
+			printf("32 byte chunk %d/%d\n", j, len);
+
 		}
+		printf("%d [%02x]\n", j, data[j]);
 		write(com_fd, &data[j], 1);
 	}
 }
