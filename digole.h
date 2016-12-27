@@ -69,12 +69,26 @@ enum COLORS{
 	RED      = 0xE4,
 	ORANGE   = 0xEC,
 	PURPLE   = 0x66,
+	MAGENTA  = 0xA1,
 	YELLOW   = 0xFC,
 	WHITE    = 0xFF,
 	BLACK    = 0x00,
 	GREEN    = 0x3C,
-	BLUE     = 0x03
+	BLUE     = 0x03,
+	PEACH    = 0xF1,
+	GREY     = 0x52
 };
+
+enum CGFONTS{
+	FONT0 = 0,   /* u8g_font_unifont */
+	FONT1 = 6,   /* u8g_font_4x6 */
+	FONT2 = 10,  /* u8g_font_6x10 */
+	FONT3 = 18,  /* u8g_font_9x18B */
+	FONT4 = 51,  /* u8g_font_osr18 */
+	FONT5 = 120, /* u8g_font_gdr20 */
+	FONT6 = 123  /* u8g_font_osr35n */
+};
+
 
 /* Change for your Display */
 #define DISP_W  (160)  /*!< screen \a width in pixels */
