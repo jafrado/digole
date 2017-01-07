@@ -25,10 +25,6 @@
 
 static int byte_count = 0; /*!< For metering - every 64-bytes of data requires a 40ms delay from the host to avoid overwhelming the display controller */
 
-/* NOTE: requires write()/read() for serial communications IO which
- * can be easily replaced with puts()/gets() at the lowest layer
- */
-
 /** 
  * @brief write n bytes of data to a file descriptor
  *
@@ -41,7 +37,7 @@ static int byte_count = 0; /*!< For metering - every 64-bytes of data requires a
  * @param[in] nbytes the number of bytes to write
  * @return number of bytes successfully written
  */
-int writen(int fd, unsigned char* ptr, int nbytes)
+int io_write(int fd, unsigned char* ptr, int nbytes)
 {
 	int nleft, nwritten;
 	nleft = nbytes;
@@ -74,7 +70,7 @@ int writen(int fd, unsigned char* ptr, int nbytes)
  * @param[in] nbytes the number of bytes to read
  * @return number of bytes successfully read
  */
-int readn(int fd, unsigned char* ptr, int nbytes)
+int io_read(int fd, unsigned char* ptr, int nbytes)
 {
 	int nleft, nread;
 	nleft = nbytes;
