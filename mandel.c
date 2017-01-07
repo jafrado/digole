@@ -18,7 +18,7 @@
 #include "digole.h"
 
 extern int serial_open(unsigned char* comport, int highspeed) ;
-extern int writen(int fd, const unsigned char* ptr, int nbytes);
+extern int io_write(int fd, const unsigned char* ptr, int nbytes);
 int colors[] = { RED, ORANGE, YELLOW, GREEN, CYAN, BLUE, PURPLE, WHITE, BLACK, 0};
 #define N_COLORS 9
 
@@ -47,10 +47,10 @@ int main(int argc, char* argv[])
 	}
 
 	/* Open com port at 9600, send baud-switch command and goto 115Kbaud*/
-
+#ifndef __arm__
 	printf("Set Baud to 115200\n");
 	/* Set high-speed UART mode */
-	writen(com_fd, "SB115200\0",9);
+	io_write(com_fd, "SB115200\0",9);
 	close(com_fd);
 	sleep(1);
 	printf("Reopen as high-speed mode...\n");
@@ -58,6 +58,7 @@ int main(int argc, char* argv[])
 		printf("error: could not open [%s]\n", argv[1]);
 		exit(2);
 	}
+#endif /* !__arm__ */
 
 	/* Init screen */
 	dd_set_mode('C');
