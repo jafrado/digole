@@ -8,7 +8,7 @@
 int com_fd = -1;
 
 extern int serial_open(unsigned char* comport, int highspeed) ;
-extern int writen(int fd, const unsigned char* ptr, int nbytes);
+extern int io_write(int fd, const unsigned char* ptr, int nbytes);
 /* amg_img.c */
 extern unsigned char amg_img[];
 extern int amg_img_size;
@@ -51,12 +51,14 @@ int main(int argc, char* argv[])
 		exit(2);
 	}
 
+#ifndef __arm__
 	/* Open com port at 9600, send baud-switch command and goto 115Kbaud*/
-
 	printf("Set Baud to 115200\n");
 	/* Set high-speed UART mode */
-	writen(com_fd, "SB115200\0",9);
+	io_write(com_fd, "SB115200\0",9);
 	close(com_fd);
+#endif /* !__arm__ */
+
 	sleep(1);
 	printf("Reopen as high-speed mode...\n");
 	if ((com_fd = serial_open(argv[1],1)) < 0) { 
