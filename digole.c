@@ -17,7 +17,7 @@
  *
  */
 
-/* Need to implement writen() in io.c and print_com() in digole.c */
+/* Need to implement io_write() in io.c and print_com() in digole.c */
 
 /**
  * @defgroup display display
@@ -69,12 +69,12 @@ void ms_delay(unsigned int usecs)
 	return us_delay(usecs*1000);
 }
 
-extern int writen(int fd, unsigned char* ptr, int nbytes);
+extern int io_write(int fd, unsigned char* ptr, int nbytes);
 extern int com_fd;
 
 void print_com(int fd, unsigned char* buf)
 {
-	writen(fd, buf, strlen(buf));
+	io_write(fd, buf, strlen(buf));
 }
 
 /* Library routines */
@@ -89,9 +89,9 @@ void print_com(int fd, unsigned char* buf)
  */
 void dd_println(unsigned char* v) 
 {
-	writen(com_fd, "TT", 2);
-	writen(com_fd, v, strlen(v));
-	writen(com_fd, "\x0dTRT", 4);
+	io_write(com_fd, "TT", 2);
+	io_write(com_fd, v, strlen(v));
+	io_write(com_fd, "\x0dTRT", 4);
 }
 
 /** 
@@ -127,9 +127,9 @@ void dd_enable_cursor(void)
  */
 void dd_draw_str(unsigned char x, unsigned char y, unsigned char *s) 
 {
-        writen(com_fd, "TP", 2);
-        writen(com_fd, &x, 1);
-        writen(com_fd, &y, 1);
+        io_write(com_fd, "TP", 2);
+        io_write(com_fd, &x, 1);
+        io_write(com_fd, &y, 1);
         dd_println(s);
 }
 
@@ -352,12 +352,12 @@ void draw_bitmap(unsigned char x, unsigned char y,
 	if ((w & 7) != 0)
 		i = 1;
 	print("DIM");
-	writen(com_fd, &x, 1);
-	writen(com_fd, &y, 1);
-	writen(com_fd, &w, 1);
-	writen(com_fd, &h, 1);
+	io_write(com_fd, &x, 1);
+	io_write(com_fd, &y, 1);
+	io_write(com_fd, &w, 1);
+	io_write(com_fd, &h, 1);
 	for (j = 0; j < h * ((w >> 3) + i); j++) {
-		writen(com_fd, &bitmap[j], 1);
+		io_write(com_fd, &bitmap[j], 1);
     }
 }
 
@@ -477,9 +477,9 @@ void dd_draw_frame(unsigned char x, unsigned char y,
 void dd_setpixel(unsigned char x, unsigned char y, unsigned char color) 
 {
 	print("DP");
-	writen(com_fd, &x, 1);
-	writen(com_fd, &y, 1);
-	writen(com_fd, &color, 1);
+	io_write(com_fd, &x, 1);
+	io_write(com_fd, &y, 1);
+	io_write(com_fd, &color, 1);
 	delay(20);
 }
 
@@ -779,18 +779,18 @@ void dd_upload_user_font(int len,
 	int j;
 	unsigned char u;
 	print("SUF");
-	writen(com_fd, &sect, 1);
+	io_write(com_fd, &sect, 1);
 	u = (len % 256);
-	writen(com_fd, &u, 1);
+	io_write(com_fd, &u, 1);
 	u = (len / 256);
-	writen(com_fd, &u, 1);
+	io_write(com_fd, &u, 1);
 	for (j = 0; j < len; j++) {
 		if((j%32)==0) {
 			delay(50);
 			delay(INTERNAL_DELAY);
 		}
          
-		writen(com_fd, &data[j], 1);
+		io_write(com_fd, &data[j], 1);
 	}
 }
 
@@ -820,16 +820,16 @@ void dd_draw_bitmap256(unsigned char x, unsigned char y,
 	delay(50);
 #endif
 	print("EDIM1");
-	writen(com_fd, &x, 1);
-	writen(com_fd, &y, 1);
-	writen(com_fd, &w, 1);
-	writen(com_fd, &h, 1);
+	io_write(com_fd, &x, 1);
+	io_write(com_fd, &y, 1);
+	io_write(com_fd, &w, 1);
+	io_write(com_fd, &h, 1);
 	for (j = 0; j < h * w; j++) {
 		if((j%1024)==0) {
 			delay(INTERNAL_DELAY);
 //			printf("sleep\n");
 		}
-		writen(com_fd, &bitmap[j], 1);
+		io_write(com_fd, &bitmap[j], 1);
 	}
 }
 
@@ -859,15 +859,15 @@ void dd_draw_bitmap262K(unsigned char x, unsigned char y,
 	delay(50);
 #endif
 	print("EDIM3");
-	writen(com_fd, &x, 1);
-	writen(com_fd, &y, 1);
-	writen(com_fd, &w, 1);
-	writen(com_fd, &h, 1);
+	io_write(com_fd, &x, 1);
+	io_write(com_fd, &y, 1);
+	io_write(com_fd, &w, 1);
+	io_write(com_fd, &h, 1);
 	for (j = 0; (j < h * w * 3); j++) {
 		if((j%1024)==0) {
 			delay(INTERNAL_DELAY);
 		}
-		writen(com_fd, &bitmap[j], 1);
+		io_write(com_fd, &bitmap[j], 1);
 	}
 }
 
@@ -883,9 +883,9 @@ void dd_draw_bitmap262K(unsigned char x, unsigned char y,
 void dd_set_truecolor(unsigned char r, unsigned char g, unsigned char b) 
 {
 	print("ESC");
-	writen(com_fd, &r, 1); 
-	writen(com_fd, &g, 1);
-	writen(com_fd, &b, 1);
+	io_write(com_fd, &r, 1); 
+	io_write(com_fd, &g, 1);
+	io_write(com_fd, &b, 1);
 }
 /**
  * @brief reset the drawing window to full screen
@@ -921,10 +921,10 @@ void dd_define_win(unsigned char x, unsigned char y,
 		   unsigned char h, unsigned char w)
 {
 	print("DWWIN");
-	writen(com_fd, &x, 1); 
-	writen(com_fd, &y, 1);
-	writen(com_fd, &w, 1);
-	writen(com_fd, &h, 1);
+	io_write(com_fd, &x, 1); 
+	io_write(com_fd, &y, 1);
+	io_write(com_fd, &w, 1);
+	io_write(com_fd, &h, 1);
 }
 
 
