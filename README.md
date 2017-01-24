@@ -67,7 +67,7 @@ See also: http://www.digole.com//images/file/Tech_Data/Digole_Serial_Display_Ada
 ## Software
 
 The software is written in C99, Linux kernel coding style and is distributed under the MIT License.
-Doxygen is used for[http://realflightsystems.com/techpubs/digole/html/](API Documentation)
+Doxygen is used for API Documentation
 
 
 ## Copyright
