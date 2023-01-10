@@ -91,7 +91,8 @@ void dd_println(unsigned char* v)
 {
 	io_write(com_fd, "TT", 2);
 	io_write(com_fd, v, strlen(v));
-	io_write(com_fd, "\x0dTRT", 4);
+	io_write(com_fd, 0, 1);
+r	
 }
 
 /** 
@@ -127,7 +128,7 @@ void dd_enable_cursor(void)
  */
 void dd_draw_str(unsigned char x, unsigned char y, unsigned char *s) 
 {
-        io_write(com_fd, "TP", 2);
+        io_write(com_fd, "\x00TP", 3);
         io_write(com_fd, &x, 1);
         io_write(com_fd, &y, 1);
         dd_println(s);
