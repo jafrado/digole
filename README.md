@@ -69,6 +69,10 @@ See also: http://www.digole.com//images/file/Tech_Data/Digole_Serial_Display_Ada
 The software is written in C99, Linux kernel coding style and is distributed under the MIT License.
 Doxygen is used for API Documentation
 
+## Examnple usage on ODroid
+
+The code should be portable to many POSIX based systems here is [a link to how it was used on Odroid](https://magazine.odroid.com/article/digole-serial-displays/)
+
 
 ## Copyright
     Copyright (C) 2016 Real Flight Systems 
