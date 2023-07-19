@@ -25,7 +25,7 @@ SERIAL=rpi_spi.c io_spi.c
 endif
 endif
 
-all: showtarget oledtest mandel fip imgload
+all: showtarget oledtest mandel fip imgload startup
 
 showtarget:
 	@echo "Building for [$(SYS)/$(BUS)]"
@@ -43,6 +43,9 @@ mandel: digole.c $(SERIAL) mandel.c
 
 fip: digole.c $(SERIAL) fip.c
 	$(CC) $(CFLAGS) digole.c $(SERIAL) fip.c -o $@ -lm
+
+startup: digole.c $(SERIAL) startup.c
+	$(CC) $(CFLAGS) digole.c $(SERIAL) startup.c -o $@ -lm
 
 etags TAGS ETAGS tags:
 	etags -a *.c *.h
