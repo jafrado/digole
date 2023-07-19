@@ -15,10 +15,12 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include "digole.h"
+#include "serial.h"
 
-extern int serial_open(unsigned char* comport, int highspeed) ;
-extern int io_write(int fd, const unsigned char* ptr, int nbytes);
+extern int io_write(int fd, unsigned char* ptr, int nbytes);
+
 int colors[] = { RED, ORANGE, YELLOW, GREEN, CYAN, BLUE, PURPLE, WHITE, BLACK, 0};
 #define N_COLORS 9
 
