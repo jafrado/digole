@@ -92,7 +92,6 @@ void dd_println(unsigned char* v)
 	io_write(com_fd, "TT", 2);
 	io_write(com_fd, v, strlen(v));
 	io_write(com_fd, 0, 1);
-r	
 }
 
 /** 
@@ -717,7 +716,7 @@ void dd_upload_start_screen(int len, unsigned char *data)
 	printf("start screen: %d bytes \n", len);
 
 	if (len > 2046) { /* actually 2046 */
-	  printf("NOTE: max length %d (0x0x), truncating...\n", 2048, 2048);
+	  printf("NOTE: max length %d (0x%0x), truncating...\n", 2048, 2048);
 	  len = 2044; /* 2 bytes of command */
 	}
 	print("SSS");
@@ -763,6 +762,44 @@ void dd_upload_start_screen(int len, unsigned char *data)
 		printf("%d [%02x]\n", j, data[j]);
 		write(com_fd, &data[j], 1);
 	}
+}
+
+void dd_upload_start_screen2(int len, unsigned char *data) 
+{
+	int j;
+	unsigned char u;
+	printf("start screen: %d bytes \n", len);
+
+	print("SSS");
+
+	len+=2;
+	  
+	u = (len / 256);
+	write(com_fd, &u, 1);
+	printf("bc lsb: %02x\n", u);
+
+	u = (len % 256);
+	write(com_fd, &u, 1);
+	printf("bc msb: %02x\n", u);
+
+
+	len -= 2;
+	delay(300);
+
+
+	for (j = 0; j < len; j++) {
+		if((j%64)==0) {
+			delay(50);
+			delay(INTERNAL_DELAY);
+			printf("64 byte chunk %d/%d\n", j, len);
+
+		}
+		printf("%d [%02x]\n", j, data[j]);
+		write(com_fd, &data[j], 1);
+	}
+	u = 255;
+	write(com_fd, &u, 1);
+	delay(INTERNAL_DELAY);	
 }
 
 /**

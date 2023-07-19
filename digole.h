@@ -578,6 +578,8 @@ void dd_move_area(unsigned char x0, unsigned char y0, unsigned char w, unsigned 
  * @param[in] data the address of the data buffer
  */
 void dd_upload_start_screen(int lon, unsigned char *data) ;
+void dd_upload_start_screen2(int lon, unsigned char *data) ; //Rev2 HW
+
 /**
  * @brief upload font data 
  *
@@ -663,6 +665,7 @@ void dd_clean_win(void);
 void dd_define_win(unsigned char x, unsigned char y, unsigned char h, unsigned char w);
 
 
+void print_com(int fd, unsigned char* buf);
 
 #endif /* !__DIGOLE_DISPLAY_H */
 /** @}*/
